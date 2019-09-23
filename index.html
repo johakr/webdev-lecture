@@ -134,7 +134,7 @@
             <ol start="4">
               <li>JavaScript</li>
               <ol>
-                <li>ECMAScript</li>
+                <li>Characteristics & History</li>
                 <li>HTML DOM</li>
                 <li>JSON</li>
                 <li>Promises</li>
@@ -1704,11 +1704,157 @@
               </li>
             </ul>
           </section>
+          <section>
+            <h4>History of JavaScript (Let there be JavaScript 1 / 2)</h4>
+            <ul>
+              <li>
+                <strong>Early 1995</strong> web designers needed a
+                <em>"glue"</em> language to make their sites more dynamic
+              </li>
+              <li>
+                <strong>May 1995</strong> Brendan Eich creates
+                <em>Mocha</em> for Netscape in 10 days
+              </li>
+              <li>
+                <strong>Sep 1995</strong> renamed to <em>LiveScript</em> for
+                marketing reasons
+              </li>
+              <li>
+                <strong>Dec 1995</strong> renamed to <em>JavaScript</em> for
+                marketing reasons
+              </li>
+            </ul>
+            <small style="margin-top: 1em;"
+              ><a href="https://auth0.com/blog/a-brief-history-of-javascript/"
+                >https://auth0.com/blog/a-brief-history-of-javascript/</a
+              ></small
+            >
+          </section>
+          <section>
+            <h4>History of JavaScript (Let there be JavaScript 2 / 2)</h4>
+            <ul>
+              <li>
+                <strong>Aug 1996</strong> Microsoft reverse engineers JavaScript
+                and ships it with IE 3, but calls it <em>JScript</em>
+              </li>
+              <li>
+                <strong>1997</strong> The first standardized version of
+                JavaScript (ES1) is approved by the TC-39 committee as
+                ECMAScript
+              </li>
+              <li>
+                <strong>1999</strong> ES3 is standardized. It will stand for the
+                next 10 years.
+              </li>
+            </ul>
+            <small style="margin-top: 1em;"
+              ><a href="https://auth0.com/blog/a-brief-history-of-javascript/"
+                >https://auth0.com/blog/a-brief-history-of-javascript/</a
+              ></small
+            >
+          </section>
+          <section>
+            <h4>History of JavaScript (The Dark Ages)</h4>
+            <ul>
+              <li><strong>2000</strong> The tech bubble bursts</li>
+              <li><strong>2005</strong> Ajax gets popular</li>
+              <li>
+                <strong>2006</strong> JQuery gets created and offers
+                cross-browser compatibility
+              </li>
+              <li><strong>2008</strong> ES4 fails and gets abandoned</li>
+            </ul>
+            <small style="margin-top: 1em;"
+              ><a href="https://auth0.com/blog/a-brief-history-of-javascript/"
+                >https://auth0.com/blog/a-brief-history-of-javascript/</a
+              ></small
+            >
+          </section>
+          <section>
+            <h4>History of JavaScript (The Renaissance)</h4>
+            <ul>
+              <li>
+                <strong>2008</strong> Google releases the Chrome Browser and
+                open-sources its high-performance runtime, called the V8 engine
+              </li>
+              <li>
+                <strong>2009</strong> NodeJS is created. It gives rise to the
+                <strong>JavaScript Everywhere</strong> paradigm.
+              </li>
+              <li><strong>2009</strong> ES5 is standardized. (JSON support)</li>
+              <li>
+                <strong>2010</strong> First Frameworks: Angular and Backbone
+              </li>
+              <li><strong>2013</strong> Facebook creates ReactJS</li>
+            </ul>
+            <small style="margin-top: 1em;"
+              ><a href="https://auth0.com/blog/a-brief-history-of-javascript/"
+                >https://auth0.com/blog/a-brief-history-of-javascript/</a
+              ></small
+            >
+          </section>
+          <section>
+            <h4>History of JavaScript (Modern Times)</h4>
+            <ul>
+              <li>
+                <strong>2015</strong> ES6 brings ton of new features.
+                Transpilers like babel and typescript arise
+              </li>
+              <li>
+                <strong>2016</strong> ES7 arrives. (ECMA transforms to annual
+                releases)
+              </li>
+              <li><strong>2017</strong> ES8 arrives. Async Await Syntax</li>
+              <li><strong>2017</strong> Web Assembly (WASM) gets introduced</li>
+              <li><strong>2017</strong> Browser Cryptomining (Coinhive)</li>
+              <li><strong>2018</strong> ES9 arrives. Rest/Spread Syntax</li>
+            </ul>
+            <small style="margin-top: 1em;"
+              ><a href="https://auth0.com/blog/a-brief-history-of-javascript/"
+                >https://auth0.com/blog/a-brief-history-of-javascript/</a
+              ></small
+            >
+          </section>
         </section>
         <section>
           <section>
-            <h2>Find HTML elements</h2>
-            <h4>using the power of CSS selectors</h4>
+            <h2>Document Object Model</h2>
+            <ul>
+              <li>
+                When a web page is loaded, the browser creates a
+                <strong>DOM</strong> of the page.
+              </li>
+              <li>
+                The HTML DOM model is constructed as a <strong>tree</strong> of
+                Objects.
+              </li>
+            </ul>
+            <img
+              src="https://www.w3schools.com/js/pic_htmltree.gif"
+              class="stretch"
+            />
+          </section>
+          <section>
+            <h4>Document Object Model</h4>
+            <p>
+              standard object model and
+              <strong>programming interface for HTML</strong>
+            </p>
+            <ul>
+              <li>The HTML <strong>elements</strong> as objects</li>
+              <li>The <strong>properties</strong> of all HTML elements</li>
+              <li>The <strong>methods</strong> to access all HTML elements</li>
+              <li>The <strong>events</strong> for all HTML elements</li>
+            </ul>
+            <br /><br />
+            <small
+              >In other words: The HTML DOM is a standard for how to get,
+              change, add, or delete HTML elements.</small
+            >
+          </section>
+          <section>
+            <h4>Find HTML elements</h4>
+            <p>using the power of CSS selectors</p>
             <pre class="javascript"><code data-trim data-line-numbers>						
 						// Find one (first) element matching css selector
 						const element = document.querySelector('#id');
@@ -1717,15 +1863,14 @@
 						const elements = document.querySelectorAll('.className');
 					</code></pre>
           </section>
-        </section>
-        <section>
-          <h2>Change HTML elements</h2>
-          <h4>Mutate content, attributes & styles</h4>
-          <pre class="javascript"><code data-trim data-line-numbers>						
+          <section>
+            <h4>Change HTML elements</h4>
+            <p>Mutate content, attributes & styles</p>
+            <pre class="javascript"><code data-trim data-line-numbers>						
 							// Change the HTML content
-							document.querySelector('p').innerHTML = '<strong>new text';
+							document.querySelector('p').innerHTML = '<strong>new text</strong>';
 
-					</strong>		// Change any HTML attribute
+						// Change any HTML attribute
 							document.querySelector('img').src = '/kitty.png';
 							document.querySelector('a').href = 'https://johakr.me';
 							document.querySelector('input').value = 'Jane';
@@ -1734,10 +1879,10 @@
 							document.querySelector('p').style.color = 'red';
 							document.querySelector('p').style.display = 'none';
 						</code></pre>
-        </section>
-        <section>
+          </section>
+
           <section>
-            <h1>DOM Events</h1>
+            <h4>DOM Events</h4>
             <p>DOM Events are <em>things</em> that</p>
             <ul>
               <li>happen to HTML elements,</li>
