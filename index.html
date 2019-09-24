@@ -2155,29 +2155,72 @@
           </section>
           <section>
             <h4>JSON Example</h4>
-
-            <p
-              class="codepen"
-              data-height="500"
-              data-theme-id="0"
-              data-default-tab="js,result"
-              data-user="johakr"
-              data-slug-hash="oNvmbbB"
-              style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
-              data-pen-title="JSON"
-            >
-              <span
-                >See the Pen
-                <a href="https://codepen.io/johakr/pen/oNvmbbB"> JSON</a> by
-                Johannes (<a href="https://codepen.io/johakr">@johakr</a>) on
-                <a href="https://codepen.io">CodePen</a>.</span
-              >
-            </p>
-            <script
-              async
-              src="https://static.codepen.io/assets/embed/ei.js"
-            ></script>
+            <pre><code data-trim data-line-numbers>
+                { 
+                  "name": "John",
+                  "age": 30,
+                  "car": null,
+                  "driverLicense": false,
+                  "address": {
+                    "city": "Stuttgart",
+                    "street": "Theodor-Heuss-Straße"
+                  },
+                  "hobbies": ["reading", "cooking"]
+                }
+					</code></pre>
+          <small><a href="https://jsoneditoronline.org/?id=3e0486e4b8084baca52572bff563aefa" target="_blank">https://jsoneditoronline.org/?id=3e0486e4b8084baca52572bff563aefa</a></small>
           </section>
+          <section>
+            <h4>JSON Schema</h4>
+            <p>JSON Schema is a vocabulary that allows you to 
+            <strong>annotate and validate JSON</strong> documents.</p>
+          </section>
+          <section>
+              <h4>JSON Schema Example</h4>
+              <pre><code data-trim data-line-numbers>
+                  {
+                    "$schema": "http://json-schema.org/draft-07/schema#",
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "type": "string",
+                        "minLength": 2,
+                        "maxLength": 32
+                      },
+                      "age": {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 150
+                      },
+                      "car": {
+                        "type": [
+                          "string",
+                          "null"
+                        ],
+                        "enum": [
+                          "mercedes",
+                          "audi",
+                          null
+                        ]
+                      },
+                      "driverLicense": {
+                        "type": "boolean"
+                      },
+                      "hobbies": {
+                        "type": "array"
+                      }
+                    },
+                    "required": [
+                      "name",
+                      "age",
+                      "car",
+                      "driverLicense",
+                      "hobbies"
+                    ]
+                  }
+            </code></pre>
+            <small><a href="https://www.jsonschemavalidator.net/">https://www.jsonschemavalidator.net/</a></small>
+            </section>
         </section>
         <section><h2>Promises</h2></section>
         <section><h2>Fetch API</h2></section>
