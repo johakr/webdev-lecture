@@ -1264,6 +1264,7 @@
                 </td>
               </tr>
             </table>
+            <small>CSS3 introduced the <mark>::</mark>after notation (with two colons) to distinguish pseudo-classes from pseudo-elements. Browsers also accept <mark>:</mark>after, introduced in CSS2.</small>
           </section>
           <section>
             <h4>Pseudo-elements selectors (2 / 2)</h4>
@@ -1513,6 +1514,9 @@
             <img
               src="https://css-tricks.com/wp-content/csstricks-uploads/cssspecificity-calc-5.png"
             />
+            <br />
+            <small><mark>::</mark>first-letter with two colons would be CSS3 compliant</small>
+            <br />
             <small
               ><a href="https://css-tricks.com/specifics-on-css-specificity/"
                 >https://css-tricks.com/specifics-on-css-specificity/</a
@@ -1524,7 +1528,7 @@
             <pre>
 								* { }
 								li { }
-								li:first-line
+								li::first-line
 								ul li { }
 								ul ol+li { }
 								h1 + *[rel=up] { }	
@@ -1546,7 +1550,7 @@
             <pre>
                   * { } (0, 0, 0, 0)
                   li { } (0, 0, 0, 1)
-                  li:first-line (0, 0, 0, 2)
+                  li::first-line (0, 0, 0, 2)
                   ul li { } (0, 0, 0, 2)
                   ul ol+li { } (0, 0, 0, 3)
                   h1 + *[rel=up] { } (0, 0, 1, 1)
