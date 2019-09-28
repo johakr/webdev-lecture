@@ -1,0 +1,19 @@
+pre {
+  font: 24px Verdana bold;
+}
+
+.fizz {
+  color: blue;
+}
+
+.buzz {
+  color: red;
+}
+
+pre > span + span {
+  margin-left: 6px;
+}
+
+pre > span:not(:last-child)::after {
+  content: ",";
+}
