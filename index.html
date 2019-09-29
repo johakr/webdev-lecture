@@ -140,33 +140,29 @@
                 <li>Promises</li>
                 <li>Fetch API</li>
               </ol>
-              <li>Package Management & Build Tooling</li>
-              <ol>
-                <li>npm</li>
-                <li>babel</li>
-                <li>webpack</li>
-              </ol>
             </ol>
           </section>
           <section>
             <h4>Backend Dev: Dynamic Data</h4>
-            <ol start="6">
+            <ol start="5">
               <li>Server Side Web Technology</li>
               <ol>
                 <li>Overview</li>
                 <li>Server Side JavaScript (NodeJS)</li>
+                <li>Package Management</li>
               </ol>
               <li>Building an API</li>
+
               <ol>
                 <li>REST</li>
-                <li>Swagger</li>
                 <li>Express JS</li>
+                <li>Swagger</li>
               </ol>
             </ol>
           </section>
           <section>
             <h4>Frontend Dev II: Frameworks</h4>
-            <ol start="8">
+            <ol start="7">
               <li>Single Page Applications</li>
               <ol>
                 <li>Virtual DOM</li>
@@ -2364,6 +2360,67 @@
               <strong>fetching resources</strong> across the network...
             </p>
             <small>...based on Promises.</small>
+          </section>
+          <section>
+            <h4>Fetch: GET JSON Data</h4>
+            <pre><code data-trim data-line-numbers>
+              fetch("https://swapi.co/api/people/") // request object
+                .then(response => respose.json()) // response object
+                .then(json => console.log(json));
+            </code></pre>
+          </section>
+          <section>
+            <h4>Fetch: POST JSON Data</h4>
+            <pre><code data-trim data-line-numbers>
+                fetch("/login", { 
+                  method: "POST",
+                  body: JSON.stringify({ username: 'john', password: 'secure' }),
+                  headers: {
+                    "Content-Type": "application/json"
+                  },
+                 }) // request object
+                  .then(response => respose.json()) // response object
+                  .then(json => console.log(json));
+              </code></pre>
+          </section>
+          <section>
+            <h4>Fetch: Response Object</h4>
+            <ul>
+              <li><strong>headers</strong> http response headers</li>
+              <li>
+                <strong>ok</strong> boolean stating whether the response was
+                successful (status in the range 200-299) or not.
+              </li>
+              <li>
+                <strong>status</strong> status code of the response (e.g., 200
+                for a success)
+              </li>
+              <li>
+                <strong>json()</strong> returns a promise that resolves with the
+                result of parsing the body text as JSON
+              </li>
+              <li>
+                <strong>text()</strong> returns a promise that resolves with a
+                string
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h4>Fetch: Request Object</h4>
+            <ul>
+              <li><strong>headers</strong> http request headers</li>
+              <li>
+                <strong>method</strong> http request method (GET, POST...)
+              </li>
+              <li>
+                <strong>body</strong> content for an api request which needs a
+                body payload
+              </li>
+              <li>
+                <strong>credentials </strong> credentials of the request (e.g.,
+                "omit", "same-origin", "include"). The default is "same-origin"
+              </li>
+            </ul>
           </section>
         </section>
       </div>
