@@ -1264,7 +1264,13 @@
                 </td>
               </tr>
             </table>
-            <small>CSS3 introduced the <mark>::</mark>after notation (with two colons) to distinguish pseudo-classes from pseudo-elements. Browsers also accept <mark>:</mark>after, introduced in CSS2.</small>
+
+            <small
+              >CSS3 introduced the <mark>::</mark>after notation (with two
+              colons) to distinguish pseudo-classes from pseudo-elements.
+              Browsers also accept <mark>:</mark>after, introduced in
+              CSS2.</small
+            >
           </section>
           <section>
             <h4>Pseudo-elements selectors (2 / 2)</h4>
@@ -1515,7 +1521,10 @@
               src="https://css-tricks.com/wp-content/csstricks-uploads/cssspecificity-calc-5.png"
             />
             <br />
-            <small><mark>::</mark>first-letter with two colons would be CSS3 compliant</small>
+            <small
+              ><mark>::</mark>first-letter with two colons would be CSS3
+              compliant</small
+            >
             <br />
             <small
               ><a href="https://css-tricks.com/specifics-on-css-specificity/"
@@ -2200,7 +2209,12 @@
               JSON Schema is a vocabulary that allows you to
               <strong>annotate and validate JSON</strong> documents.
             </p>
-            <small><a href="https://json-schema.org/learn/miscellaneous-examples.html">https://json-schema.org/learn/miscellaneous-examples.html</a></small>
+            <small
+              ><a
+                href="https://json-schema.org/learn/miscellaneous-examples.html"
+                >https://json-schema.org/learn/miscellaneous-examples.html</a
+              ></small
+            >
           </section>
           <section>
             <h4>JSON Schema Example</h4>
@@ -2253,34 +2267,67 @@
             >
           </section>
         </section>
-        <section><section><h2>Promises</h2>
-        <p>A Promise is a proxy for a <strong>value not necessarily known when the promise is created</strong>. It allows you to associate handlers with an asynchronous action’s eventual success value or failure reason. This lets asynchronous methods return values like synchronous methods: instead of immediately returning the final value, <strong>the asynchronous method returns a promise to supply the value at some point in the future</strong>.</p>
-        <small><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise</a></small>
-        </section>
-        <section data-background="https://previews.123rf.com/images/nikilitov/nikilitov1503/nikilitov150300138/37640626-three-tequila-shots-with-lemon-and-salt-on-wooden-background-.jpg">
-          <div style="background-color: rgba(0, 0, 0, 0.8); padding: 24px">
-          <h2>Real Life Example</h2>
-          <p style="text-align: left; max-width: 70%;">Hey Mr. Promise! Can you run to the store down the street and get me a bottle of tequilla?</p>
-          <p style="text-align: right; max-width: 70%; margin-left: auto;">Sure thing!</p>
-          <p style="text-align: left; max-width: 70%;">While you are doing that, I will cut the lemons.</p>
-          <p style="text-align: right; max-width: 70%; margin-left: auto;">Sounds good! See you in a bit.</p>
-        </div>
-        </section>
         <section>
-          <p>There are <strong>2 promises</strong> (asynchronous actions with indefinite outcome)</p>
-          <ul>
-            <li>getting a bottle of tequilla</li>
-            <li>cutting the lemons</li>
-          </ul>
-          <p>with <strong>3 possible states</strong> respectively</p>
-          <ul>
-            <li>pending: awaiting promise response</li>
-            <li>resolved: promise has successfully returned</li>
-            <li>rejected: failure occurred</li>
-          </ul>
-        </section>
-        <section>
-          <pre><code data-trim data-line-numbers>
+          <section>
+            <h2>Promises</h2>
+            <p>
+              A Promise is a proxy for a
+              <strong
+                >value not necessarily known when the promise is created</strong
+              >. It allows you to associate handlers with an asynchronous
+              action’s eventual success value or failure reason. This lets
+              asynchronous methods return values like synchronous methods:
+              instead of immediately returning the final value,
+              <strong
+                >the asynchronous method returns a promise to supply the value
+                at some point in the future</strong
+              >.
+            </p>
+            <small
+              ><a
+                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise"
+                >https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise</a
+              ></small
+            >
+          </section>
+          <section
+            data-background="https://previews.123rf.com/images/nikilitov/nikilitov1503/nikilitov150300138/37640626-three-tequila-shots-with-lemon-and-salt-on-wooden-background-.jpg"
+          >
+            <div style="background-color: rgba(0, 0, 0, 0.8); padding: 24px">
+              <h2>Real Life Example</h2>
+              <p style="text-align: left; max-width: 70%;">
+                Hey Mr. Promise! Can you run to the store down the street and
+                get me a bottle of tequilla?
+              </p>
+              <p style="text-align: right; max-width: 70%; margin-left: auto;">
+                Sure thing!
+              </p>
+              <p style="text-align: left; max-width: 70%;">
+                While you are doing that, I will cut the lemons.
+              </p>
+              <p style="text-align: right; max-width: 70%; margin-left: auto;">
+                Sounds good! See you in a bit.
+              </p>
+            </div>
+          </section>
+          <section>
+            <p>
+              There are <strong>2 promises</strong> (asynchronous actions with
+              indefinite outcome)
+            </p>
+            <ul>
+              <li>getting a bottle of tequilla</li>
+              <li>cutting the lemons</li>
+            </ul>
+            <p>with <strong>3 possible states</strong> respectively</p>
+            <ul>
+              <li>pending: awaiting promise response</li>
+              <li>resolved: promise has successfully returned</li>
+              <li>rejected: failure occurred</li>
+            </ul>
+          </section>
+          <section>
+            <pre><code data-trim data-line-numbers>
             const cutLemons = () => new Promise((resolve, reject) => {
               const success = cutting(); // doing sth async
 
@@ -2291,20 +2338,33 @@
               }
             });
       </code></pre>
-      <pre><code data-trim data-line-numbers>
+            <pre><code data-trim data-line-numbers>
         cutLemons() // pending
           .then(result => console.log(lemons)) // resolved 🍋🍋🍋
           .catch(error => console.log(error)) // rejected 🤕🤕🤕
       </code></pre>
+          </section>
+          <section>
+            <p>
+              In short, a Promise is an <strong>object</strong> that once called
+              upon, will evetually <strong>resolve</strong> or
+              <strong>reject</strong> and
+              <strong
+                >return a response based on some criteria that is specified
+                within the Promise object</strong
+              >.
+            </p>
+          </section>
         </section>
         <section>
-          <p>In short, a Promise is an <strong>object</strong> that once called upon, will evetually <strong>resolve</strong> or <strong>reject</strong> and <strong>return a response based on some criteria that is specified within the Promise object</strong>.</p>
-        </section>
-      </section>
-        <section><section><h2>Fetch API</h2>
-        <p>The Fetch API provides an interface for <strong>fetching resources</strong> across the network...</p>
-        <small>...based on Promises.</small>
-        </section>
+          <section>
+            <h2>Fetch API</h2>
+            <p>
+              The Fetch API provides an interface for
+              <strong>fetching resources</strong> across the network...
+            </p>
+            <small>...based on Promises.</small>
+          </section>
         </section>
       </div>
     </div>
