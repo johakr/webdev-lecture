@@ -147,7 +147,8 @@
             <ol start="5">
               <li>Server Side Web Technology</li>
               <ol>
-                <li>Overview</li>
+                <li>Architecture Overview</li>
+                <li>Web Frameworks</li>
                 <li>Server Side JavaScript (NodeJS)</li>
                 <li>Package Management</li>
               </ol>
@@ -2423,6 +2424,137 @@
             </ul>
           </section>
         </section>
+        <section>
+          <section>
+            <h2>Server Side Web Technology</h2>
+            <p>A dynamic site can return different data for a URL based on information provided by the user or stored preferences and can perform other operations as part of returning a response</p>
+          </section>
+          <section>
+            <h4>What can you do on the server-side?</h4>
+            <ul>
+              <li>Efficient storage and delivery of information</li>
+              <li>Customised user experience</li>
+              <li>Controlled access to content</li>
+              <li>Store session / state information</li>
+              <li>Notifications and communication</li>
+              <li>Data analysis</li>
+            </ul>
+            <small style="margin-top: 2rem"><a href="https://developer.mozilla.org/en-US/docs/Learn/Server-side/First_steps/Introduction">https://developer.mozilla.org/en-US/docs/Learn/Server-side/First_steps/Introduction</a></small>
+          </section>
+          <section>
+            <h4>Web Architecture Overview</h4>
+            <p>Your HTML gets dynamic, but <strong>who is in charge of creating the HTML markup?</strong></p>
+            <ul>
+              <li>Server: Server-side HTML</li>
+              <li>Both: JS Generation Widgets (Fetch)</li>
+              <li>Client: Single Page Applications (SPA)</li>
+            </ul>
+          </section>
+          <section>
+            <h4>Architecture I: Server-side HTML</h4>
+            <p>HTML is completely composed on the server side</p>
+            <img src="https://mdn.mozillademos.org/files/13839/Web%20Application%20with%20HTML%20and%20Steps.png">
+          </section>
+          <section>
+              <h4>Architecture II: JS Generation Widgets</h4>
+              <p>HTML Skeleton is composed on the server side & some data is exposed by a JSON API.<br /> Parts of the DOM are created client-side by JavaScript</p>
+              <img src="/images/architecture-widgets.jpg">
+          </section>
+          <section>
+              <h4>Architecture III: Single Page Applications</h4>
+              <p>Server only provides data by JSON APIs.<br /> DOM is completely composed on the client-side by JavaScript</p>
+              <img src="/images/architecture-spa.jpg">
+          </section>
+          <section>
+            <h2>Web Frameworks</h2>
+            <p>will help you with</p>
+            <ul>
+              <li>Work directly with HTTP requests and responses</li>
+              <li>Route requests to the appropriate handler</li>
+              <li>Make it easy to access data in the request</li>
+              <li>Abstract and simplify database access</li>
+              <li>Rendering data (working with JSON)</li>
+            </ul>
+          </section>
+          <section>
+            <h4>Web Frameworks</h4>
+            <ul>
+              <li>Python: Django, Flask</li>
+              <li>NodeJS: Express, Fastify</li>
+              <li>Ruby: Ruby on Rails</li>
+              <li>PHP: Laravel</li>
+              <li>Java: Spring Boot</li>
+              <li>Go: Gin</li>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Server Side JavaScript: NodeJS</h2>
+            <p>Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine.</p>
+            <img class="stretch" src="https://nodejs.org/static/images/logos/nodejs-new-pantone-white.png">
+          </section>
+          <section><h4>Node Package Manager (npm)</h4>
+          <ul>
+            <li>world's largest software registry</li>
+            <li>over 800,000 code packages</li>
+            <li>open-source developers use npm to share software</li>
+            <li>npm comes prebundled with node</li>
+          </ul>
+          <small style="margin-top:2rem;">A package is a reusable piece of software which can be downloaded from a global registry into a developer’s local environment.</small>
+          <small style="margin-top:2rem;">A package manager is a piece of software that lets you manage the dependencies (external code written by you or someone else) that your project needs to work correctly.</small>
+          </section>
+          <section>
+            <h4>NodeJS Quickstart</h4>
+            <pre><code data-trim data-line-numbers>
+              npm init # creates project manifest (package.json)
+              npm install express # installs the express web framework as a dependency
+            </code></pre>
+            <pre><code data-trim data-line-numbers>
+              // index.js
+              const express = require('express');
+              const app = express();
+                
+              app.get('/', (req, res) => {
+                res.json({ hello: 'world' });
+              });
+                
+              app.listen(3000);  
+            </code></pre>
+            <pre><code data-trim data-line-numbers>
+              node index.js # runs the server 
+            </code></pre>
+          </section>
+          </section>
+          <section>
+            <section>
+            <h2>Building an API</h2>
+            <p>An application programming interface (API) is an interface or communication protocol between a client and a server.</p>
+          </section>
+          <section>
+            <h4>RESTful Web APIs</h4>
+            <p>REpresentational State Transfer is an architectural style for distributed hypermedia systems (web apps).</p>
+            <ul>
+              <li><strong>Uniform interface</strong>: consistent naming conventions and data format for resources</li>
+              <li><strong>Client–server</strong>: separating the user interface concerns from the data storage concerns</li>
+              <li>Stateless</li>
+              <li>Cacheable</li>
+              <li>Layered system</li>
+            </ul>
+          </section>
+          <section>
+            <h4>Resource Design</h4>
+            <p>Use plural nouns, HTTP methods, status codes, JSON.</p>
+            <p>No trailing slashes, no file extensions.</p>
+            <ul>
+              <li>GET /todos (collection)</li>
+              <li>GET	/todos/1 (resource)</li>
+              <li>POST /todos (create resource)</li>
+              <li>PUT /todos/1 (replace resource)</li>
+              <li>PATCH	/todos/1 (update resource)</li>
+              <li>DELETE /todos/1 (delete resource)</li>
+            </ul>
+          </section>
+          </section>
       </div>
     </div>
 

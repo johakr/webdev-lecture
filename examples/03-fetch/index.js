@@ -1,9 +1,8 @@
 const fetchButton = document.querySelector("#fetchPeople");
 const list = document.querySelector("#peoplelist");
-const log = document.querySelector("#log");
 
 fetchButton.addEventListener("click", () => {
-  fetch("https://swapi.co/api/people/")
+  fetch("https://jsonplaceholder.typicode.com/todos/")
     .then(res => {
       console.log(res.ok, res.status, res);
 
@@ -11,14 +10,12 @@ fetchButton.addEventListener("click", () => {
 
       return res.json();
     })
-    .then(json => {
-      console.log(json);
+    .then(todos => {
+      console.log(todos);
 
-      log.textContent = JSON.stringify(json, null, 2);
-
-      json.results.forEach(person => {
+      todos.forEach(todo => {
         const listItem = document.createElement("li");
-        listItem.textContent = person.name;
+        listItem.textContent = todo.title;
 
         list.appendChild(listItem);
       });
