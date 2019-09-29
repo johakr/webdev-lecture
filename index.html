@@ -2596,12 +2596,39 @@
             <p>No trailing slashes, no file extensions.</p>
             <ul>
               <li>GET /todos (collection)</li>
+              <li>GET /todos?userId=1 (filtered collection)</li>
               <li>GET /todos/1 (resource)</li>
               <li>POST /todos (create resource)</li>
               <li>PUT /todos/1 (replace resource)</li>
               <li>PATCH /todos/1 (update resource)</li>
               <li>DELETE /todos/1 (delete resource)</li>
             </ul>
+          </section>
+          <section>
+            <h4>ExpressJS</h4>
+            <p>Fast, unopinionated, minimalist web framework for Node.js</p>
+            <ul>
+              <li>Routing</li>
+              <li>HTTP Request / Response Handling</li>
+              <li>JSON support</li>
+            </ul>
+          </section>
+          <section>
+            <h4>ExpressJS: Routing</h4>
+            <p>Routing refers to determining how an application responds to a client request to a particular endpoint, which is a URI (or path) and a specific HTTP request method (GET, POST...).</p>
+            <pre><code data-trim data-line-numbers>
+              app.METHOD(PATH, HANDLER) 
+            </code></pre>
+            <pre><code data-trim data-line-numbers>
+              app.get('/', (req, res) => {
+                return res.json({ hello: 'world' });
+              });
+            </code></pre>
+            <pre><code data-trim data-line-numbers>
+              app.post('/', (req, res) => {
+                return res.status(204).send();
+              });
+            </code></pre>
           </section>
         </section>
       </div>
