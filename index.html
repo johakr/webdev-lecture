@@ -1580,6 +1580,29 @@
             >
           </section>
           <section>
+            <h4>CSS: Example Exercise</h4>
+            <pre class="css"><code data-trim data-line-numbers>
+              ul#primary-nav li.active:not(:first-child) > a:hover::after {
+                content: '⧉'
+              }
+            </code></pre>
+            <ol>
+              <li>Describe in natural language what the css rule does.</li>
+              <li>
+                Provide a HTML structure with at least one element matched by
+                the CSS selector.
+              </li>
+              <li>
+                What's the CSS specificity of the given CSS selector in format
+                (m,n,o,p)?
+              </li>
+              <li>
+                You want to override the given CSS rule for a specific element
+                which is selected by that rule. What options do you have?
+              </li>
+            </ol>
+          </section>
+          <section>
             <h4>How to include CSS</h4>
             <p>External CSS</p>
             <pre class="html"><code data-trim data-line-numbers>
