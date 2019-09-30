@@ -2541,6 +2541,44 @@
             >
           </section>
           <section>
+            <h4>npm manifest file: package.json</h4>
+            <p>
+              Packages published to the registry must contain a package.json
+              file.
+            </p>
+            <ul>
+              <li>lists the packages your project depends on</li>
+              <li>
+                specifies versions of a package that your project can use using
+                semantic versioning rules
+              </li>
+              <li>
+                makes your build reproducible, and therefore easier to share
+                with other developers
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h4>npm manifest file: package.json</h4>
+            <pre><code data-trim data-line-numbers>
+              {
+                "name": "04-express",
+                "version": "1.0.0",
+                "description": "",
+                "main": "index.js",
+                "scripts": {
+                  "start": "node index.js",
+                  "test": "echo \"Error: no test specified\" && exit 1"
+                },
+                "author": "",
+                "license": "ISC",
+                "dependencies": {
+                  "express": "^4.17.1"
+                }
+              }
+            </code></pre>
+          </section>
+          <section>
             <h4>NodeJS Quickstart</h4>
             <pre><code data-trim data-line-numbers>
               npm init # creates project manifest (package.json)
@@ -2609,13 +2647,18 @@
             <p>Fast, unopinionated, minimalist web framework for Node.js</p>
             <ul>
               <li>Routing</li>
-              <li>HTTP Request / Response Handling</li>
-              <li>JSON support</li>
+              <li>
+                HTTP Request / Response Handling with first class JSON support
+              </li>
+              <li>Static File Handling</li>
             </ul>
+            <small style="margin-top: 2rem"
+              ><a href="https://expressjs.com">https://expressjs.com</a></small
+            >
           </section>
           <section>
             <h4>ExpressJS: Routing</h4>
-            <p>
+            <p style="font-size:32px;">
               Routing refers to determining how an application responds to a
               client request to a particular endpoint, which is a URI (or path)
               and a specific HTTP request method (GET, POST...).
@@ -2624,15 +2667,78 @@
               app.METHOD(PATH, HANDLER) 
             </code></pre>
             <pre><code data-trim data-line-numbers>
-              app.get('/', (req, res) => {
-                return res.json({ hello: 'world' });
+              // GET /users
+              app.get('/users', (req, res) => {
+                // TODO: DO STUFF
               });
             </code></pre>
             <pre><code data-trim data-line-numbers>
+              // POST /users
               app.post('/', (req, res) => {
-                return res.status(204).send();
+                // TODO: DO STUFF
               });
             </code></pre>
+          </section>
+          <section>
+            <h4>ExpressJS: HTTP Request</h4>
+            <p style="font-size: 32px">
+              The req object represents the HTTP request and has properties for
+              the request query string, parameters, body, HTTP headers, and so
+              on.
+            </p>
+            <pre><code data-trim data-line-numbers>
+              // GET /users/2
+              app.get('/users/:id', (req, res) => {
+                console.log(req.params.id) // access named route params
+              })
+            </code></pre>
+            <pre><code data-trim data-line-numbers>
+              app.use(express.json()) // for parsing application/json
+
+              // POST /users { username: 'john' }
+              app.post('/users', (req, res) => {
+                console.log(req.body.username) // access json request body 
+              });
+            </code></pre>
+            <pre><code data-trim data-line-numbers>
+              // GET /users?age=26
+              app.get('/users', (req, res) => {
+                console.log(req.query.age) // access query string params 
+              });
+            </code></pre>
+          </section>
+          <section>
+            <h4>ExpressJS: HTTP Response</h4>
+            <p style="font-size: 32px">
+              The res object represents the HTTP response that an Express app
+              sends when it gets an HTTP request.
+            </p>
+            <pre><code data-trim data-line-numbers>
+                app.get('/', (req, res) => {
+                  return res.json({ }); // send json, status code 200 implicit
+                });
+              </code></pre>
+            <pre><code data-trim data-line-numbers>
+                app.get('/', (req, res) => {
+                  return res.status(204).send(); // send 204 response with empty body
+                });
+              </code></pre>
+            <pre><code data-trim data-line-numbers>
+                app.get('/', (req, res) => {
+                  return res.status(404).json({ error: 'not found' }); // send 404 with json body
+                });
+              </code></pre>
+          </section>
+          <section>
+            <h4>ExpressJS: Static File Handling</h4>
+            <p style="font-size: 32px">
+              To serve static files such as images, CSS files, and JavaScript
+              files, use the express.static built-in middleware function in
+              Express.
+            </p>
+            <pre><code data-trim data-line-numbers>
+                app.use(express.static('public')) // sends static files from the public directory
+              </code></pre>
           </section>
         </section>
       </div>

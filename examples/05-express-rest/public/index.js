@@ -2,7 +2,7 @@ const fetchButton = document.querySelector("#fetchTodos");
 const list = document.querySelector("#todoList");
 
 fetchButton.addEventListener("click", () => {
-  fetch("https://jsonplaceholder.typicode.com/todos/")
+  fetch("/api/todos")
     .then(res => {
       console.log(res.ok, res.status, res);
 

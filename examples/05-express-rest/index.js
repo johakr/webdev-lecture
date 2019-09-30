@@ -6,6 +6,7 @@ const todos = require("./todos.json");
 let idCount = todos.length;
 
 app.use(express.json());
+app.use(express.static("public"));
 
 app.get("/api/todos", (req, res) => {
   if (req.query.userId !== undefined) {
