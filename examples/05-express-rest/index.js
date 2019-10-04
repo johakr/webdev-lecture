@@ -31,6 +31,8 @@ app.post("/api/todos", (req, res) => {
 
   todo.id = ++idCount;
 
+  todos.push(todo);
+
   return res.status(201).json(todo);
 });
 
@@ -46,7 +48,7 @@ app.put("/api/todos/:id", (req, res) => {
 });
 
 app.patch("/api/todos/:id", (req, res) => {
-  const todo = todos.find(todo => todo.id === parseInt(req.params.id));
+  let todo = todos.find(todo => todo.id === parseInt(req.params.id));
 
   if (!todo) return res.status(404).json({ error: "not found" });
 
