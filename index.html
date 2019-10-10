@@ -157,13 +157,14 @@
               <ol>
                 <li>REST</li>
                 <li>Express JS</li>
-                <li>Swagger</li>
+                <li>OpenAPI Specification</li>
               </ol>
+              <li>Excursion: JavaScript Fatigue</li>
             </ol>
           </section>
           <section>
             <h4>Frontend Dev II: Frameworks</h4>
-            <ol start="7">
+            <ol start="8">
               <li>Single Page Applications</li>
               <ol>
                 <li>Virtual DOM</li>
@@ -191,6 +192,7 @@
               <li>Web Scraping</li>
               <li>Internationalization (i18n)</li>
               <li>Testing</li>
+              <li>Real Time Systems</li>
             </ul>
           </section>
         </section>
@@ -2666,6 +2668,15 @@
             </ul>
           </section>
           <section>
+            <h4>REST Sequence Data Flow</h4>
+            <img class="stretch" src="images/rest_sequence.png" />
+            <small
+              >Elliott, Eric. Programming JavaScript applications: Robust web
+              architecture with node, HTML5, and modern JS libraries. " O'Reilly
+              Media, Inc.", 2014.</small
+            >
+          </section>
+          <section>
             <h4>ExpressJS</h4>
             <p>Fast, unopinionated, minimalist web framework for Node.js</p>
             <ul>
@@ -2762,6 +2773,158 @@
             <pre><code data-trim data-line-numbers>
                 app.use(express.static('public')) // sends static files from the public directory
               </code></pre>
+          </section>
+          <section>
+            <h2>API Documentation</h2>
+          </section>
+          <section>
+            <h4>OpenAPI</h4>
+            <p>
+              OpenAPI Specification is an
+              <strong>API description format for REST APIs</strong>. An OpenAPI
+              file (JSON) allows you to describe your entire API, including:
+            </p>
+            <ul>
+              <li>
+                Available endpoints (/users) and operations on each endpoint
+                (GET /users, POST /users)
+              </li>
+              <li>Operation parameters Input and output for each operation</li>
+              <li>Authentication methods</li>
+              <li>Contact information, license, terms of use...</li>
+            </ul>
+            <small
+              ><a
+                href="https://swagger.io/docs/specification/about/"
+                target="_blank"
+                style="margin-top: 3rem"
+                >Open API</a
+              ></small
+            >
+          </section>
+          <section>
+            <h4>OpenAPI Example</h4>
+            <pre><code data-trim data-line-numbers>
+                {
+                  "openapi": "3.0.0",
+                  "info": {
+                    "title": "Sample API",
+                    "description": "Optional multiline or single-line description in [CommonMark](http://commonmark.org/help/) or HTML.",
+                    "version": "0.1.9"
+                  },
+                  "servers": [
+                    {
+                      "url": "http://api.example.com/v1",
+                      "description": "Optional server description, e.g. Main (production) server"
+                    },
+                    {
+                      "url": "http://staging-api.example.com",
+                      "description": "Optional server description, e.g. Internal staging server for testing"
+                    }
+                  ],
+                  "paths": {
+                    "/users": {
+                      "get": {
+                        "summary": "Returns a list of users.",
+                        "description": "Optional extended description in CommonMark or HTML.",
+                        "responses": {
+                          "200": {
+                            "description": "A JSON array of user names",
+                            "content": {
+                              "application/json": {
+                                "schema": {
+                                  "type": "array",
+                                  "items": {
+                                    "type": "string"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+					</code></pre>
+          </section>
+          <section>
+            <h4>Swagger</h4>
+            <a href="https://swagger.io/tools/open-source/">
+              <img src="images/swagger.png" />
+            </a>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Excursion: JavaScript Fatigue</h2>
+            <p>
+              despite all of the language’s progress and growth, many developers
+              have said they are dealing with JavaScript fatigue. JavaScript
+              fatigue refers to the
+              <strong>inability to keep up with the latest tools</strong>, the
+              <strong>fear of becoming obsolete</strong>, the
+              <strong>constant change of the ecosystem</strong>, and the
+              <strong>overwhelming choice</strong>
+            </p>
+            <small
+              ><a
+                href="https://auth0.com/blog/how-to-manage-javascript-fatigue/"
+                >How to Manage JavaScript Fatigue</a
+              ></small
+            >
+          </section>
+          <section>
+            <h4>Tutorial Hell</h4>
+            <a
+              href="https://www.reddit.com/r/webdev/comments/defxvr/web_development_seems_overwhelming/"
+              target="_blank"
+              ><img src="images/reddit_overhelming.png"
+            /></a>
+          </section>
+          <section>
+            <h4>Every Programming Tutorial</h4>
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/MAlSjtxy5ak"
+              frameborder="0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </section>
+          <section>
+            <h4>Increasing Requirements</h4>
+            <small
+              >2019 is simultaneously a
+              <strong>wonderful and also terrifying time</strong> for a newcomer
+              to learn to code. There are so many resources out there! Awesome!
+              But also, there are so many resources out there! Where does anyone
+              even start?</small
+            >
+            <iframe
+              style="margin-top: 2rem"
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/4nQT9h3NSEk?start=384"
+              frameborder="0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </section>
+          <section>
+            <h4>Burnout is a thing</h4>
+            <a
+              href="https://www.reddit.com/r/webdev/comments/85s7f8/do_you_guys_have_days_in_which_you_cant_stand/"
+              ><img src="images/burnout.png"
+            /></a>
+          </section>
+          <section>
+            <h4>Imposter Syndrome</h4>
+            <a
+              href="https://www.reddit.com/r/webdev/comments/bujz38/you_guys_ever_feel_like_you_pretty_have_no_in/"
+              ><img src="images/imposter.png"
+            /></a>
           </section>
         </section>
       </div>
