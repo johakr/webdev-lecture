@@ -9,12 +9,24 @@
 
     <title>Web Development</title>
 
-    <link rel="stylesheet" href="css/reset.css" />
-    <link rel="stylesheet" href="css/reveal.min.css" />
-    <link rel="stylesheet" href="css/theme/black.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/css/reset.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/css/reveal.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/css/theme/black.min.css"
+    />
 
     <!-- Theme used for syntax highlighting of code -->
-    <link rel="stylesheet" href="lib/css/monokai.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/lib/css/monokai.min.css"
+    />
 
     <style>
       .reveal pre {
@@ -29,8 +41,8 @@
       link.rel = "stylesheet";
       link.type = "text/css";
       link.href = window.location.search.match(/print-pdf/gi)
-        ? "css/print/pdf.css"
-        : "css/print/paper.css";
+        ? "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/css/print/pdf.min.css"
+        : "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/css/print/paper.min.css";
       document.getElementsByTagName("head")[0].appendChild(link);
     </script>
   </head>
@@ -1718,7 +1730,11 @@
           </section>
           <section>
             <h4>QUIZ: Well aimed? How well do you know CSS selectors?</h4>
-            <a href="https://codepen.io/pehaa/full/ROapJZ"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/74321/darts.svg" style="height:400px;"></a>
+            <a href="https://codepen.io/pehaa/full/ROapJZ"
+              ><img
+                src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/74321/darts.svg"
+                style="height:400px;"
+            /></a>
           </section>
         </section>
         <section data-background-color="#ff5252">
@@ -2925,19 +2941,22 @@
           </section>
           <section>
             <h4>Imposter Syndrome</h4>
-            <a href="https://www.reddit.com/r/webdev/comments/bujz38/you_guys_ever_feel_like_you_pretty_have_no_in/"
+            <a
+              href="https://www.reddit.com/r/webdev/comments/bujz38/you_guys_ever_feel_like_you_pretty_have_no_in/"
               ><img src="images/imposter.png"
             /></a>
           </section>
           <section>
             <h4>Developer Roadmap</h4>
-            <a href="https://roadmap.sh/frontend"><img src="images/roadmap.png" /></a>
+            <a href="https://roadmap.sh/frontend"
+              ><img src="images/roadmap.png"
+            /></a>
           </section>
         </section>
       </div>
     </div>
 
-    <script src="js/reveal.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/js/reveal.min.js"></script>
 
     <script>
       Reveal.initialize({
@@ -2947,9 +2966,13 @@
         center: true,
         slideNumber: true,
         dependencies: [
-          { src: "plugin/zoom-js/zoom.js", async: true },
-          { src: "plugin/highlight/highlight.js", async: true }
-        ]
+          {
+            src:
+              "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/plugin/zoom-js/zoom.min.js",
+            async: true,
+          },
+          { src: "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/plugin/highlight/highlight.min.js", async: true },
+        ],
       });
     </script>
   </body>
