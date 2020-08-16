@@ -1,0 +1,2983 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>Web Development</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.9.2/css/reset.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.9.2/css/reveal.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.9.2/css/theme/black.min.css"
+    />
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.9.2/lib/css/monokai.min.css"
+    />
+
+    <style>
+      .reveal pre {
+        width: 100%;
+        tab-size: 2;
+      }
+    </style>
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement("link");
+      link.rel = "stylesheet";
+      link.type = "text/css";
+      link.href = window.location.search.match(/print-pdf/gi)
+        ? "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.9.2/css/print/pdf.min.css"
+        : "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.9.2/css/print/paper.min.css";
+      document.getElementsByTagName("head")[0].appendChild(link);
+    </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <section>
+            <h1>Web Development</h1>
+            <p>lecture at DHBW Stuttgart</p>
+            <p>
+              <small
+                >given by
+                <a href="https://johakr.me" target="_blank"
+                  >Johannes Kronmüller</a
+                >
+                in September–October 2020</small
+              >
+            </p>
+          </section>
+          <section>
+            <h4>
+              <a href="https://johakr.me" target="_blank"
+                >Johannes Kronmüller</a
+              >
+            </h4>
+            <p>Full Stack Web Dev Coach, Lecturer, Developer<br /> / IT-Consultant</p>
+            <ul style="display:block; font-size:2rem;">
+              <li>
+                SPICED Academy
+                <small style="float:right;">Aug 2020–today</small>
+              </li>
+              <li>
+                Mercedes-Benz Bank AG
+                <small style="float:right;">Oct 2018–Aug 2020</small>
+              </li>
+              <li>
+                Steuerbot GmbH
+                <small style="float:right;">Oct 2017–Sep 2018</small>
+              </li>
+              <li>
+                IBM iX <small style="float:right;">Sep 2015–Aug 2017</small>
+              </li>
+            </ul>
+            <ul style="display:block; margin-top: 1rem; font-size:2rem;">
+              <li>
+                lecturer in Web Development<small style="float:right;"
+                  >2019–today</small
+                >
+              </li>
+              <li>
+                lecturer in Open Source<small style="float:right;"
+                  >2019–today</small
+                >
+              </li>
+            </ul>
+            <ul style="display:block; margin-top: 1rem; font-size:2rem;">
+              <li>
+                M.Sc. IT-Management, FOM Hamburg
+                <small style="float:right;">2015–2017</small>
+              </li>
+              <li>
+                B.Sc. Information Systems, Uni Stuttgart
+                <small style="float:right;">2012–2015</small>
+              </li>
+            </ul>
+            <ul style="display:block; margin-top: 1rem; font-size:2rem;">
+              <li>Professional Scrum Master (PSM I)</li>
+              <li>Enterprise Design Thinking Practitioner</li>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Content Outline</h2>
+            <ol>
+              <li>Web 101: Static Web Pages</li>
+              <li>Frontend Development I: Interactive Web Pages</li>
+              <li>Backend Development: Dynamic Data</li>
+              <li>Frontend Development II: Frameworks</li>
+              <li>Advanced Topics</li>
+            </ol>
+          </section>
+          <section>
+            <h4>Web 101: Static Web Pages</h4>
+            <ol>
+              <li>Prelude</li>
+              <ol>
+                <li>Benefits of Becoming a Web Developer</li>
+                <li>History of the World Wide Web</li>
+                <li>State of the Web 2019</li>
+              </ol>
+
+              <li>Web Development Environment</li>
+              <li>Basic Web Technology</li>
+              <ol>
+                <li>HTTP</li>
+                <li>HTML</li>
+                <li>CSS</li>
+              </ol>
+            </ol>
+          </section>
+          <section>
+            <h4>Frontend Dev I: Interactive Web Pages</h4>
+            <ol start="4">
+              <li>JavaScript</li>
+              <ol>
+                <li>Characteristics & History</li>
+                <li>Document Object Model (DOM)</li>
+                <li>JSON</li>
+                <li>Promises</li>
+                <li>Fetch API</li>
+              </ol>
+            </ol>
+          </section>
+          <section>
+            <h4>Backend Dev: Dynamic Data</h4>
+            <ol start="5">
+              <li>Server Side Web Technology</li>
+              <ol>
+                <li>Architecture Overview</li>
+                <li>Web Frameworks</li>
+                <li>Server Side JavaScript (NodeJS)</li>
+                <li>Package Management</li>
+              </ol>
+              <li>Building an API</li>
+
+              <ol>
+                <li>REST</li>
+                <li>Express JS</li>
+                <li>OpenAPI Specification</li>
+              </ol>
+              <li>Excursion: JavaScript Fatigue</li>
+            </ol>
+          </section>
+          <section>
+            <h4>Frontend Dev II: Frameworks</h4>
+            <ol start="8">
+              <li>Single Page Applications</li>
+              <ol>
+                <li>Virtual DOM</li>
+                <li>Client Side Routing</li>
+                <li>Frontend Frameworks</li>
+              </ol>
+              <li>React</li>
+              <ol>
+                <li>Hello World</li>
+                <li>JSX</li>
+                <li>Components and Props</li>
+                <li>Hooks: State and Effects</li>
+              </ol>
+            </ol>
+          </section>
+          <section>
+            <h4>Advanced Topics</h4>
+            <ul>
+              <li>Authorization & Web Security</li>
+              <li>Rendering Strategies & Performance</li>
+              <li>Web Accessibility</li>
+              <li>Mobile Development</li>
+              <li>Web Components</li>
+              <li>Micro Frontends</li>
+              <li>Web Scraping</li>
+              <li>Internationalization (i18n)</li>
+              <li>Testing</li>
+              <li>Real Time Systems</li>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Benefits of Becoming a Web Developer</h2>
+            <small
+              ><a href="https://youtu.be/JguKLogoGMk" target="_blank"
+                >https://youtu.be/JguKLogoGMk</a
+              ></small
+            >
+          </section>
+          <section>
+            <h4>The Pay</h4>
+            <ul>
+              <li>High paying jobs</li>
+              <li>Make money with side projects</li>
+              <li>Highest paying jobs without need of formal education</li>
+            </ul>
+          </section>
+          <section>
+            <h4>The industry isn't going anywhere</h4>
+            <ul>
+              <li>We will always need websites, web apps, web services...</li>
+              <li>Every industry benefits from web development</li>
+              <li>Don't worry about Wix taking your jobs</li>
+            </ul>
+          </section>
+          <section>
+            <h4>You can be self taught</h4>
+            <ul>
+              <li>Industry full of college dropouts</li>
+              <li>Having a portfolio is the most important thing to have</li>
+              <li>Learn for free</li>
+            </ul>
+          </section>
+          <section>
+            <h4>It isn't boring</h4>
+            <ul>
+              <li>Extremly satisfying to build things</li>
+              <li>Unleash your creativity</li>
+              <li>Not standardized and mind numbing</li>
+              <li>Always learn & do new things</li>
+            </ul>
+          </section>
+          <section>
+            <h4>Work for yourself</h4>
+            <ul>
+              <li>Freelancing / Consulting</li>
+              <li>Side projects for revenue stream</li>
+              <li>Content creation</li>
+              <li>Learn business skills</li>
+            </ul>
+          </section>
+          <section>
+            <h4>Work from anywhere</h4>
+            <ul>
+              <li>Most companies provide home office options</li>
+              <li>
+                Running own company is easier than in most other professions
+              </li>
+              <li>100% remote work is a thing</li>
+            </ul>
+          </section>
+          <section>
+            <h4>Seeing Results</h4>
+            <ul>
+              <li>
+                You build things that last
+                <small>(if you like it or not)</small>
+              </li>
+              <li>People use the applications you build</li>
+              <li>Build tools you can use in other areas of your life</li>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>History of the World Wide Web</h2>
+            <p>
+              <strong>Tim Berners-Lee</strong>, a British scientist, invented
+              the World Wide Web (WWW) in <strong>1989</strong>, while working
+              at CERN.
+            </p>
+          </section>
+          <section>
+            <h2>1990</h2>
+            <ul>
+              <li>three fundamental technologies</li>
+              <ul>
+                <li>HyperText Markup Language (HTML)</li>
+                <li>Uniform Resource Identifier (URI)</li>
+                <li>Hypertext Transfer Protocol (HTTP)</li>
+              </ul>
+              <li>first web browser: <em>WorldWideWeb</em></li>
+              <li>first web server: <em>httpd</em></li>
+            </ul>
+          </section>
+          <section>
+            <h2>1991</h2>
+            <p>
+              <a href="http://info.cern.ch/hypertext/WWW/TheProject.html"
+                >world's first webpage</a
+              >
+            </p>
+          </section>
+          <section>
+            <h2>1993</h2>
+            <h4>NCSA Mosaic Browser</h4>
+            <p>first browser able to render embedded elements like images</p>
+            <img
+              class="stretch"
+              src="https://upload.wikimedia.org/wikipedia/commons/c/c8/NCSA_Mosaic_Logo.gif"
+            />
+          </section>
+          <section>
+            <img
+              class="stretch"
+              src="https://upload.wikimedia.org/wikipedia/commons/e/ea/NCSA_Mosaic_Browser_Screenshot.png"
+            />
+          </section>
+          <section>
+            <h2>1994</h2>
+            <h4>World Wide Web Consortium (W3C)</h4>
+            <p>
+              The W3C’s vision was to
+              <strong>standardize the protocols and technologies</strong> used
+              to build the web such that the content would be available to as
+              wide a population of the world as possible.
+            </p>
+          </section>
+          <section>
+            <h2>1995</h2>
+            <h4>Browser Wars</h4>
+            <img
+              class="stretch"
+              src="https://www.wired.com/wp-content/uploads/archive/images/article/magazine/1610/mf_chrome_browser_wars_975.jpg"
+            />
+          </section>
+          <section>
+            <h2>2000</h2>
+            <h4>Dot-Com Bubble</h4>
+            <img
+              class="stretch"
+              src="https://upload.wikimedia.org/wikipedia/commons/8/84/Nasdaq_Composite_dot-com_bubble.svg"
+            />
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>State of the Web 2019</h2>
+            <iframe
+              class="stretch"
+              data-src="https://www.youtube.com/embed/n9bx5a3PMks"
+            ></iframe>
+          </section>
+          <section>
+            <ul>
+              <li>request to allow notifications,</li>
+              <li>request to set as default homepage,</li>
+              <li>cookie consent,</li>
+              <li>age verification,</li>
+              <li>request to allow geolocation,</li>
+              <li>request to subscribe to newsletter,</li>
+              <li>support live chat,</li>
+              <li>adblocker notice,</li>
+              <li>satisfaction evaluation modal,</li>
+              <li>broken content and</li>
+              <li>request to like / share on social media</li>
+            </ul>
+          </section>
+          <section>
+            <p>
+              Obviously, this is annoying to customers actually interacting with
+              the website…
+            </p>
+            <p>how come those patterns are so common?</p>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Web Development Environment</h2>
+            <a href="https://code.visualstudio.com/"
+              ><img
+                width="150"
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/800px-Visual_Studio_Code_1.35_icon.svg.png"
+            /></a>
+            <a href="https://www.google.com/intl/de_de/chrome/"
+              ><img
+                width="150"
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Google_Chrome_icon_%282011%29.svg/2000px-Google_Chrome_icon_%282011%29.svg.png"
+            /></a>
+            <a href="https://git-scm.com/"
+              ><img
+                width="150"
+                src="https://git-scm.com/images/logos/downloads/Git-Icon-White.png"
+            /></a>
+          </section>
+          <section>
+            <h4>Code Editor: Visual Studio Code</h4>
+            <img src="https://i.snipboard.io/4Urvxz.jpg" class="stretch" />
+            <small
+              ><a
+                href="https://insights.stackoverflow.com/survey/2019#technology-_-most-popular-development-environments"
+                >Most Popular Development Environments (2019)</a
+              ></small
+            >
+          </section>
+          <section>
+            <h4>Browser Dev Tools: Chrome</h4>
+            <img src="https://i.snipboard.io/GWuU9I.jpg" class="stretch" />
+            <small
+              ><a href="https://www.w3counter.com/trends"
+                >Web Browser Usage Trends (Aug 2019)</a
+              ></small
+            >
+          </section>
+          <section>
+            <h4>Version Control: GitHub</h4>
+            <img src="https://i.snipboard.io/ybjsHI.jpg" class="stretch" />
+            <small
+              ><a href="https://octoverse.github.com/"
+                >The State of the Octoverse (2018)</a
+              ></small
+            >
+          </section>
+        </section>
+
+        <section>
+          <h2>Basic Web Technology</h2>
+          <img
+            src="https://mdn.mozillademos.org/files/13673/HTTP%20&%20layers.png"
+            class="stretch"
+          />
+        </section>
+        <section>
+          <section><h2>Hypertext Transfer Protocol</h2></section>
+          <section>
+            <h4>The Request/Response Cycle of the Web</h4>
+            <img
+              class="stretch"
+              src="https://miro.medium.com/max/745/1*bx2bWzqeKCBndthiLGMK5g.png"
+            />
+          </section>
+          <section>
+            <h4>Uniform Resource Identifiers (URIs)</h4>
+            <img src="https://i.snipboard.io/rahZjQ.jpg" class="stretch" />
+            <small
+              ><strong>URLs</strong> are a subset of URIs limited to the schemes
+              <em>http</em> and <em>https</em>.</small
+            >
+          </section>
+          <section>
+            <h4>HTTP Request</h4>
+            <ul>
+              <li>
+                a request line with <em>method</em> <em>path</em> and
+                <em>http version</em>
+                <pre>GET /images/logo.png HTTP/1.1</pre>
+              </li>
+              <li>
+                the host header
+                <pre>Host: example.com</pre>
+              </li>
+              <li>
+                optional additional request headers
+                <pre>Accept-Language: en</pre>
+              </li>
+              <li>an empty line</li>
+              <li>an optional message body</li>
+            </ul>
+          </section>
+          <section>
+            <h4>HTTP Reponse</h4>
+            <ul>
+              <li>
+                a status line with <em>http version</em>,
+                <em>status code</em> and <em>reason message</em>
+                <pre>HTTP/1.1 200 OK</pre>
+              </li>
+              <li>
+                optional response headers
+                <pre>Content-Type: text/html</pre>
+              </li>
+              <li>an empty line</li>
+              <li>an optional message body</li>
+            </ul>
+          </section>
+          <section>
+            <h4>HTTP Request & Response Example</h4>
+            <p>Request</p>
+            <pre><code data-trim data-line-numbers>
+								GET / HTTP/1.1
+								Host: www.example.com
+					</code></pre>
+            <p>Response</p>
+            <pre><code data-trim data-line-numbers>
+							HTTP/1.1 200 OK
+							Date: Mon, 23 May 2005 22:38:34 GMT
+							Content-Type: text/html; charset=UTF-8
+							Content-Length: 138
+							Last-Modified: Wed, 08 Jan 2003 23:11:55 GMT
+							Server: Apache/1.3.3.7 (Unix) (Red-Hat/Linux)
+							ETag: "3f80f-1b6-3e1cb03b"
+							Accept-Ranges: bytes
+							Connection: close
+							
+							&lt;html&gt;
+							&lt;head&gt;
+								<title>An Example Page</title>
+							&lt;/head&gt;
+							&lt;body&gt;
+								<p>Hello World, this is a very simple HTML document.</p>
+							&lt;/body&gt;
+							&lt;/html&gt;
+						</code></pre>
+          </section>
+
+          <section>
+            <h4>HTTP Request & Response Example</h4>
+            <img
+              class="stretch"
+              src="https://i.snipboard.io/kCyLSD.jpg"
+              class="stretch"
+            />
+          </section>
+          <section>
+            <h4>HTTP Methods</h4>
+            <ul>
+              <li>
+                indicate the <strong>desired action</strong> to be performed on
+                the identified resource,
+              </li>
+              <li>have their own <strong>semantics</strong></li>
+              <ul>
+                <li><strong>safe</strong>: no side-effects</li>
+                <li>
+                  <strong>idempotent</strong>: can be replayed with no
+                  side-effects
+                </li>
+              </ul>
+              <li>are <strong>case-sensitive</strong></li>
+            </ul>
+          </section>
+
+          <section>
+            <h4>HTTP Methods</h4>
+            <table>
+              <tr>
+                <th>method</th>
+                <th>semantics</th>
+                <th>Safe</th>
+                <th>Idempotent</th>
+              </tr>
+              <tr>
+                <td>GET</td>
+                <td><small>retrieve data</small></td>
+                <td style="color: lime">YES</td>
+                <td style="color: lime">YES</td>
+              </tr>
+              <tr>
+                <td>HEAD</td>
+                <td><small>retrieve meta-information</small></td>
+                <td style="color: lime">YES</td>
+                <td style="color: lime">YES</td>
+              </tr>
+              <tr>
+                <td>POST</td>
+                <td><small>create new resource</small></td>
+                <td style="color: red">NO</td>
+                <td style="color: red">NO</td>
+              </tr>
+              <tr>
+                <td>PUT</td>
+                <td><small>replace resource</small></td>
+                <td style="color: red">NO</td>
+                <td style="color: lime">YES</td>
+              </tr>
+              <tr>
+                <td>DELETE</td>
+                <td><small>delete resource</small></td>
+                <td style="color: red">NO</td>
+                <td style="color: lime">YES</td>
+              </tr>
+              <tr>
+                <td>OPTIONS</td>
+                <td><small>retrieve supported methods</small></td>
+                <td style="color: lime">YES</td>
+                <td style="color: lime">YES</td>
+              </tr>
+              <tr>
+                <td>PATCH</td>
+                <td><small>apply partial modifications</small></td>
+                <td style="color: red">NO</td>
+                <td style="color: red">NO</td>
+              </tr>
+            </table>
+          </section>
+          <section>
+            <h4>HTTP Status Codes</h4>
+            <table>
+              <tr>
+                <th>status code</th>
+                <th>reason message</th>
+              </tr>
+              <tr>
+                <td>200</td>
+                <td>OK</td>
+              </tr>
+              <tr>
+                <td>301</td>
+                <td>Moved Permanently</td>
+              </tr>
+              <tr>
+                <td>304</td>
+                <td>Not Modified</td>
+              </tr>
+              <tr>
+                <td>401</td>
+                <td>Unauthorized</td>
+              </tr>
+              <tr>
+                <td>403</td>
+                <td>Forbidden</td>
+              </tr>
+              <tr>
+                <td>404</td>
+                <td>Not Found</td>
+              </tr>
+              <tr>
+                <td>500</td>
+                <td>Internal Server Error</td>
+              </tr>
+            </table>
+          </section>
+          <section>
+            <h4>HTTP Characteristics</h4>
+            <ul>
+              <li>
+                <strong>simple</strong>: readable and understandable by humans
+              </li>
+              <li><strong>extensible</strong>: by using custom headers</li>
+              <li><strong>stateless</strong>: no link between two requests</li>
+              <li>
+                <strong><em>not</em> sessionless</strong>: cookies for stateful
+                sessions
+              </li>
+              <li>
+                <strong>relient on TCP</strong>: as an reliable connection
+              </li>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>HyperText Markup Language</h2>
+            <p>
+              standard markup language for documents designed to be displayed in
+              a web browser
+            </p>
+          </section>
+          <section>
+            <h4>Basic HTML Page Structure (1 / 3)</h4>
+            <pre class="html"><code data-trim data-line-numbers>						
+							&lt;!doctype html>
+							&lt;html dir="ltr" lang="en">
+							&lt;head>
+								<meta charset="utf-8">
+								<meta name="viewport" content="width=device-width">
+								<title>My first HTML Page</title>
+							&lt;/head>
+							&lt;body>
+								<h1>Hello world!</h1>
+								<p>Lorem ipsum dolor sit amet</p>
+							&lt;/body>
+							&lt;/html>
+						</code></pre>
+          </section>
+          <section>
+            <h4>Basic HTML Page Structure (2 / 3)</h4>
+            <pre><code>&lt;!doctype html></code></pre>
+            <small
+              >Document Type Definition (DTD). Tells browser to use HTML5
+              grammatics (render mode).</small
+            >
+            <hr />
+            <pre><code>&lt;html dir=”ltr” lang=”de”></code></pre>
+            <small>Root element. Can hold language metadata.</small>
+            <hr />
+            <pre><code>&lt;head></code></pre>
+            <small>Contains metadata about the page...</small>
+            <hr />
+            <pre><code>&lt;meta charset="utf-8"></code></pre>
+            <small>… used charset,</small>
+          </section>
+          <section>
+            <h4>Basic HTML Page Structure (3 / 3)</h4>
+            <pre><code>&lt;meta name="viewport" content="width=device-width"></code></pre>
+            <small>… render information for responsive behavior,</small>
+            <hr />
+            <pre><code>&lt;title>My first HTML Page&lt;/title></code></pre>
+            <small>… document title.</small>
+            <hr />
+            <pre><code>&lt;body></code></pre>
+            <small>Contains the visible part of the HTML document.</small>
+          </section>
+          <section>
+            <h4>HTML Elements</h4>
+            <ul>
+              <li>
+                are the <strong>building blocks</strong> of HTML documents,
+              </li>
+              <li>
+                consist of <strong>start tag</strong> and
+                <strong>end tag</strong> with content between, e.g.
+                <pre><code><p>Hello World</p></code></pre>
+              </li>
+              <li>
+                with no content are called <strong>empty elements</strong>, eg.
+                <pre><code><br></code></pre>
+              </li>
+              <li>can be <strong>nested</strong>,</li>
+              <li>are <strong>case-insensitive</strong> and</li>
+              <li>can have <strong>attributes</strong></li>
+            </ul>
+          </section>
+          <section>
+            <h4>HTML Attributes</h4>
+            <ul>
+              <li>
+                Attributes provide <strong>additional information</strong> about
+                an element
+              </li>
+              <li>
+                Attributes are always
+                <strong>specified in the start tag</strong>
+              </li>
+              <li>
+                Attributes usually come in
+                <strong>name/value pairs</strong> like name="value"
+              </li>
+            </ul>
+            <pre><code><a href="https://johakr.me">This is a link with href attribute</a></code></pre>
+          </section>
+          <section>
+            <h4>HTML Attributes</h4>
+            <p>
+              The <strong>global attributes</strong> below can be used on any
+              HTML element.
+            </p>
+            <table style="font-size:2rem">
+              <tr>
+                <th>Attribute</th>
+                <th>Description</th>
+              </tr>
+              <tr>
+                <td>class</td>
+                <td>
+                  Specifies one or more classnames for an element
+                  <em>(refers to a class in a style sheet)</em>
+                </td>
+              </tr>
+              <tr>
+                <td>id</td>
+                <td>Specifies a unique id for an element</td>
+              </tr>
+              <tr>
+                <td>style</td>
+                <td>Specifies an inline CSS style for an element</td>
+              </tr>
+              <tr>
+                <td>tabindex</td>
+                <td>Specifies the tabbing order of an element</td>
+              </tr>
+              <tr>
+                <td>title</td>
+                <td>Specifies extra information about an element</td>
+              </tr>
+            </table>
+          </section>
+          <section>
+            <h4>Headings</h4>
+            <p
+              class="codepen"
+              data-height="500"
+              data-theme-id="0"
+              data-default-tab="html,result"
+              data-user="johakr"
+              data-slug-hash="WNezbjg"
+              style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
+              data-pen-title="Headings"
+            >
+              <span
+                >See the Pen
+                <a href="https://codepen.io/johakr/pen/WNezbjg/"> Headings</a>
+                by Johannes (<a href="https://codepen.io/johakr">@johakr</a>) on
+                <a href="https://codepen.io">CodePen</a>.</span
+              >
+            </p>
+            <script
+              async
+              src="https://static.codepen.io/assets/embed/ei.js"
+            ></script>
+          </section>
+          <section>
+            <h4>
+              Paragraphs, Line Breaks, Horizontal Rules, Preformatted Text
+            </h4>
+            <p
+              class="codepen"
+              data-height="500"
+              data-theme-id="0"
+              data-default-tab="html,result"
+              data-user="johakr"
+              data-slug-hash="QWLmwOz"
+              style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
+              data-pen-title="Paragraphs"
+            >
+              <span
+                >See the Pen
+                <a href="https://codepen.io/johakr/pen/QWLmwOz/"> Paragraphs</a>
+                by Johannes (<a href="https://codepen.io/johakr">@johakr</a>) on
+                <a href="https://codepen.io">CodePen</a>.</span
+              >
+            </p>
+            <script
+              async
+              src="https://static.codepen.io/assets/embed/ei.js"
+            ></script>
+          </section>
+          <section>
+            <h4>Links</h4>
+            <p
+              class="codepen"
+              data-height="500"
+              data-theme-id="0"
+              data-default-tab="html,result"
+              data-user="johakr"
+              data-slug-hash="RwbMNyj"
+              style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
+              data-pen-title="Links"
+            >
+              <span
+                >See the Pen
+                <a href="https://codepen.io/johakr/pen/RwbMNyj/"> Links</a> by
+                Johannes (<a href="https://codepen.io/johakr">@johakr</a>) on
+                <a href="https://codepen.io">CodePen</a>.</span
+              >
+            </p>
+            <script
+              async
+              src="https://static.codepen.io/assets/embed/ei.js"
+            ></script>
+          </section>
+          <section>
+            <h4>Images</h4>
+            <p
+              class="codepen"
+              data-height="500"
+              data-theme-id="0"
+              data-default-tab="html,result"
+              data-user="johakr"
+              data-slug-hash="gOYebBz"
+              style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
+              data-pen-title="Images"
+            >
+              <span
+                >See the Pen
+                <a href="https://codepen.io/johakr/pen/gOYebBz/"> Images</a> by
+                Johannes (<a href="https://codepen.io/johakr">@johakr</a>) on
+                <a href="https://codepen.io">CodePen</a>.</span
+              >
+            </p>
+            <script
+              async
+              src="https://static.codepen.io/assets/embed/ei.js"
+            ></script>
+          </section>
+          <section>
+            <h4>Tables</h4>
+            <p
+              class="codepen"
+              data-height="500"
+              data-theme-id="0"
+              data-default-tab="html,result"
+              data-user="johakr"
+              data-slug-hash="QWLmwzP"
+              style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
+              data-pen-title="Tables"
+            >
+              <span
+                >See the Pen
+                <a href="https://codepen.io/johakr/pen/QWLmwzP/"> Tables</a> by
+                Johannes (<a href="https://codepen.io/johakr">@johakr</a>) on
+                <a href="https://codepen.io">CodePen</a>.</span
+              >
+            </p>
+            <script
+              async
+              src="https://static.codepen.io/assets/embed/ei.js"
+            ></script>
+          </section>
+          <section>
+            <h4>Lists</h4>
+            <p
+              class="codepen"
+              data-height="500"
+              data-theme-id="0"
+              data-default-tab="html,result"
+              data-user="johakr"
+              data-slug-hash="mdbxyoL"
+              style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
+              data-pen-title="Lists"
+            >
+              <span
+                >See the Pen
+                <a href="https://codepen.io/johakr/pen/mdbxyoL/"> Lists</a> by
+                Johannes (<a href="https://codepen.io/johakr">@johakr</a>) on
+                <a href="https://codepen.io">CodePen</a>.</span
+              >
+            </p>
+            <script
+              async
+              src="https://static.codepen.io/assets/embed/ei.js"
+            ></script>
+          </section>
+          <section>
+            <h4>Buttons</h4>
+            <p
+              class="codepen"
+              data-height="500"
+              data-theme-id="0"
+              data-default-tab="html,result"
+              data-user="johakr"
+              data-slug-hash="bGbvNPZ"
+              style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
+              data-pen-title="Buttons"
+            >
+              <span
+                >See the Pen
+                <a href="https://codepen.io/johakr/pen/bGbvNPZ/"> Buttons</a> by
+                Johannes (<a href="https://codepen.io/johakr">@johakr</a>) on
+                <a href="https://codepen.io">CodePen</a>.</span
+              >
+            </p>
+            <script
+              async
+              src="https://static.codepen.io/assets/embed/ei.js"
+            ></script>
+          </section>
+          <section>
+            <h4>Forms, Inputs, Labels</h4>
+            <p
+              class="codepen"
+              data-height="500"
+              data-theme-id="0"
+              data-default-tab="html,result"
+              data-user="johakr"
+              data-slug-hash="vYBROBR"
+              style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
+              data-pen-title="Forms"
+            >
+              <span
+                >See the Pen
+                <a href="https://codepen.io/johakr/pen/vYBROBR/"> Forms</a> by
+                Johannes (<a href="https://codepen.io/johakr">@johakr</a>) on
+                <a href="https://codepen.io">CodePen</a>.</span
+              >
+            </p>
+            <script
+              async
+              src="https://static.codepen.io/assets/embed/ei.js"
+            ></script>
+          </section>
+          <section>
+            <h4>Containers</h4>
+            <p
+              class="codepen"
+              data-height="500"
+              data-theme-id="0"
+              data-default-tab="html,result"
+              data-user="johakr"
+              data-slug-hash="JjPLdKr"
+              style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
+              data-pen-title="Containers"
+            >
+              <span
+                >See the Pen
+                <a href="https://codepen.io/johakr/pen/JjPLdKr/"> Containers</a>
+                by Johannes (<a href="https://codepen.io/johakr">@johakr</a>) on
+                <a href="https://codepen.io">CodePen</a>.</span
+              >
+            </p>
+            <script
+              async
+              src="https://static.codepen.io/assets/embed/ei.js"
+            ></script>
+          </section>
+          <section>
+            <h4>HTML 5 Semantic Elements</h4>
+            <p>
+              HTML5 introduced Semantic Elements, which clearly describe their
+              content in a <strong>human and machine readable</strong> way.
+            </p>
+          </section>
+          <section>
+            <h4>HTML 5 Semantic Elements</h4>
+            <img
+              class="stretch"
+              src="https://www.w3schools.com/html/img_sem_elements.gif"
+            />
+          </section>
+          <section>
+            <h4>HTML 5 Semantic Elements</h4>
+            <p>2 main benefits</p>
+            <ul>
+              <li>code is better readable by humans</li>
+              <li>
+                content is more accessible to machines (screen readers & search
+                engines)
+              </li>
+            </ul>
+          </section>
+        </section>
+        <section data-background-color="#ff5252">
+          <h2>
+            Let’s start simple by building a
+            <a href="http://motherfuckingwebsite.com/" target="_blank"
+              >mo’fuckin’ website</a
+            >
+            about you
+          </h2>
+        </section>
+        <section>
+          <section>
+            <h2>Cascading Style Sheets</h2>
+          </section>
+          <section>
+            <h4>Separation of content from its presentation</h4>
+            <p>While HTML describes the content, CSS describes</p>
+            <ul>
+              <li>how HTML elements are displayed (design & layout)</li>
+              <li>for different devices and screen sizes (responsive).</li>
+            </ul>
+          </section>
+          <section>
+            <h4>Same HTML different CSS</h4>
+            <ul>
+              <li>
+                <a href="https://www.w3schools.com/css/demo_default.htm"
+                  >Same Page Different Stylesheets</a
+                >
+              </li>
+              <li>
+                <a href="https://www.csszengarden.com/">CSS Zen Garden</a>
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h4>CSS Selector Syntax</h4>
+            <p>
+              CSS selectors are used to "find" (i.e. select) the HTML elements
+              you want to style.
+            </p>
+            <img src="https://www.w3schools.com/css/selector.gif" />
+            <p
+              class="codepen"
+              data-height="265"
+              data-theme-id="0"
+              data-default-tab="css,result"
+              data-user="johakr"
+              data-slug-hash="rNBzRjV"
+              style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
+              data-pen-title="Hello CSS"
+            >
+              <span
+                >See the Pen
+                <a href="https://codepen.io/johakr/pen/rNBzRjV/"> Hello CSS</a>
+                by Johannes (<a href="https://codepen.io/johakr">@johakr</a>) on
+                <a href="https://codepen.io">CodePen</a>.</span
+              >
+            </p>
+            <script
+              async
+              src="https://static.codepen.io/assets/embed/ei.js"
+            ></script>
+          </section>
+          <section>
+            <h4>CSS Selector Groups</h4>
+            <table style="font-size: 2rem;">
+              <tr>
+                <td><strong>Simple</strong> selectors</td>
+                <td>select elements based on name, id, class</td>
+              </tr>
+              <tr>
+                <td><strong>Combination</strong> selectors</td>
+                <td>
+                  select elements based on a specific relationship between them
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Pseudo-class</strong> selectors</td>
+                <td>select elements based on a certain state</td>
+              </tr>
+              <tr>
+                <td><strong>Pseudo-elements</strong> selectors</td>
+                <td>select and style a part of an element</td>
+              </tr>
+              <tr>
+                <td><strong>Attribute</strong> selectors</td>
+                <td>
+                  select elements based on an attribute or attribute value
+                </td>
+              </tr>
+            </table>
+          </section>
+          <section>
+            <h4>Simple Selectors (1 / 2)</h4>
+            <table style="font-size:2rem">
+              <tr>
+                <td><strong>class</strong> selector</td>
+                <td><mark>.</mark>intro</td>
+                <td>Selects all elements with <em>class="intro"</em></td>
+              </tr>
+              <tr>
+                <td><strong>id</strong> selector</td>
+                <td><mark>#</mark>firstname</td>
+                <td>Selects the element with <em>id="firstname"</em></td>
+              </tr>
+              <tr>
+                <td><strong>universal</strong> selector</td>
+                <td><mark>*</mark></td>
+                <td>Selects all elements</td>
+              </tr>
+              <tr>
+                <td><strong>element</strong> selector</td>
+                <td><mark>p</mark></td>
+                <td>Selects all <em>p</em> elements</td>
+              </tr>
+              <tr>
+                <td><strong>group</strong> selector</td>
+                <td>div<mark>,</mark> p</td>
+                <td>Selects all <em>div</em> and all <em>p</em> elements</td>
+              </tr>
+            </table>
+          </section>
+          <section>
+            <h4>Simple Selectors (2 / 2)</h4>
+            <p
+              class="codepen"
+              data-height="500"
+              data-theme-id="0"
+              data-default-tab="css,result"
+              data-user="johakr"
+              data-slug-hash="ZEzjWZG"
+              style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
+              data-pen-title="Simple Selectors"
+            >
+              <span
+                >See the Pen
+                <a href="https://codepen.io/johakr/pen/ZEzjWZG/">
+                  Simple Selectors</a
+                >
+                by Johannes (<a href="https://codepen.io/johakr">@johakr</a>) on
+                <a href="https://codepen.io">CodePen</a>.</span
+              >
+            </p>
+            <script
+              async
+              src="https://static.codepen.io/assets/embed/ei.js"
+            ></script>
+          </section>
+          <section>
+            <h4>Pseudo-class Selectors (1 / 2)</h4>
+            <table style="font-size:2rem">
+              <tr>
+                <td>p<mark>:first-child</mark></td>
+                <td>
+                  Selects every <em>p</em> element that is the first child of
+                  its parent
+                </td>
+              </tr>
+              <tr>
+                <td>p<mark>:last-child</mark></td>
+                <td>
+                  Selects every <em>p</em> element that is the last child of its
+                  parent
+                </td>
+              </tr>
+              <tr>
+                <td>p<mark>:nth-child(2n)</mark></td>
+                <td>
+                  Selects every <em>p</em> element that is the 2, 4, 6...th
+                  child of its parent
+                </td>
+              </tr>
+              <tr>
+                <td>input<mark>:focus</mark></td>
+                <td>Selects inputs on focus</td>
+              </tr>
+              <tr>
+                <td>a:<mark>hover</mark></td>
+                <td>Selects links on mouse over</td>
+              </tr>
+              <tr>
+                <td><mark>:not(</mark>p<mark>)</mark></td>
+                <td>Selects every element that is not a <em>p</em> element</td>
+              </tr>
+              <tr>
+                <td>button<mark>:disabled</mark></td>
+                <td>Selects every disabled <em>button</em> element</td>
+              </tr>
+            </table>
+          </section>
+          <section>
+            <h4>Pseudo-class Selectors (2 / 2)</h4>
+            <p
+              class="codepen"
+              data-height="500"
+              data-theme-id="0"
+              data-default-tab="html,result"
+              data-user="johakr"
+              data-slug-hash="rNBrLNe"
+              style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
+              data-pen-title="Pseudo-class Selectors"
+            >
+              <span
+                >See the Pen
+                <a href="https://codepen.io/johakr/pen/rNBrLNe/">
+                  Pseudo-class Selectors</a
+                >
+                by Johannes (<a href="https://codepen.io/johakr">@johakr</a>) on
+                <a href="https://codepen.io">CodePen</a>.</span
+              >
+            </p>
+            <script
+              async
+              src="https://static.codepen.io/assets/embed/ei.js"
+            ></script>
+          </section>
+          <section>
+            <h4>Pseudo-elements selectors (1 / 2)</h4>
+            <table style="font-size:2rem">
+              <tr>
+                <td>p<mark>::after</mark></td>
+                <td>
+                  Insert something after the content of each <em>p</em> element
+                </td>
+              </tr>
+              <tr>
+                <td>p<mark>::before</mark></td>
+                <td>
+                  Insert something before the content of each <em>p</em> element
+                </td>
+              </tr>
+              <tr>
+                <td>p<mark>::first-letter</mark></td>
+                <td>Selects the first letter of each <em>p</em> element</td>
+              </tr>
+              <tr>
+                <td>p<mark>::first-line</mark></td>
+                <td>Selects the first line of each <em>p</em> element</td>
+              </tr>
+              <tr>
+                <td>p<mark>::selection</mark></td>
+                <td>
+                  Selects the portion of an element that is selected by a user
+                </td>
+              </tr>
+            </table>
+
+            <small
+              >CSS3 introduced the <mark>::</mark>after notation (with two
+              colons) to distinguish pseudo-classes from pseudo-elements.
+              Browsers also accept <mark>:</mark>after, introduced in
+              CSS2.</small
+            >
+          </section>
+          <section>
+            <h4>Pseudo-elements selectors (2 / 2)</h4>
+            <p
+              class="codepen"
+              data-height="500"
+              data-theme-id="0"
+              data-default-tab="html,result"
+              data-user="johakr"
+              data-slug-hash="MWgBeKK"
+              style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
+              data-pen-title="Pseudo-elements selectors"
+            >
+              <span
+                >See the Pen
+                <a href="https://codepen.io/johakr/pen/MWgBeKK/">
+                  Pseudo-elements selectors</a
+                >
+                by Johannes (<a href="https://codepen.io/johakr">@johakr</a>) on
+                <a href="https://codepen.io">CodePen</a>.</span
+              >
+            </p>
+            <script
+              async
+              src="https://static.codepen.io/assets/embed/ei.js"
+            ></script>
+          </section>
+          <section>
+            <h4>Combination selectors (1 / 3)</h4>
+            <table style="font-size:2rem">
+              <tr>
+                <td><strong>descendant</strong> selector</td>
+                <td>
+                  <nobr>div<mark> </mark>p</nobr>
+                </td>
+                <td>
+                  Selects all <em>p</em> elements inside <em>div</em> elements
+                </td>
+              </tr>
+              <tr>
+                <td><strong>child</strong> selector</td>
+                <td>
+                  <nobr>div <mark>></mark> p</nobr>
+                </td>
+                <td>
+                  Selects all <em>p</em> elements where the parent is a
+                  <em>div</em> element
+                </td>
+              </tr>
+              <tr>
+                <td><strong>adjacent sibling</strong> selector</td>
+                <td>
+                  <nobr>div <mark>+</mark> p</nobr>
+                </td>
+                <td>
+                  Selects all <em>p</em> elements that are placed immediately
+                  after <em>div</em> elements
+                </td>
+              </tr>
+              <tr>
+                <td><strong>general sibling</strong> selector</td>
+                <td>
+                  <nobr>p <mark>~</mark> ul</nobr>
+                </td>
+                <td>
+                  Selects every <em>ul</em> element that are preceded by a
+                  <em>p</em> element
+                </td>
+              </tr>
+            </table>
+          </section>
+          <section>
+            <h4>Combination selectors (2 / 3)</h4>
+            <p
+              class="codepen"
+              data-height="500"
+              data-theme-id="0"
+              data-default-tab="css,result"
+              data-user="johakr"
+              data-slug-hash="jONpLGL"
+              style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
+              data-pen-title="Combination Selectors"
+            >
+              <span
+                >See the Pen
+                <a href="https://codepen.io/johakr/pen/jONpLGL/">
+                  Combination Selectors</a
+                >
+                by Johannes (<a href="https://codepen.io/johakr">@johakr</a>) on
+                <a href="https://codepen.io">CodePen</a>.</span
+              >
+            </p>
+            <script
+              async
+              src="https://static.codepen.io/assets/embed/ei.js"
+            ></script>
+          </section>
+          <section>
+            <h4>Combination selectors (3 / 3)</h4>
+            <h6>The Lobotomized Owl Selector</h6>
+            <img height="100" src="images/owl.png" />
+            <p
+              class="codepen"
+              data-height="265"
+              data-theme-id="0"
+              data-default-tab="css,result"
+              data-user="johakr"
+              data-slug-hash="wvwxqBM"
+              style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
+              data-pen-title="Lobotomized Owl"
+            >
+              <span
+                >See the Pen
+                <a href="https://codepen.io/johakr/pen/wvwxqBM/">
+                  Lobotomized Owl</a
+                >
+                by Johannes (<a href="https://codepen.io/johakr">@johakr</a>) on
+                <a href="https://codepen.io">CodePen</a>.</span
+              >
+            </p>
+            <script
+              async
+              src="https://static.codepen.io/assets/embed/ei.js"
+            ></script>
+          </section>
+          <section>
+            <h4>Attribute selectors (1 / 2)</h4>
+            <table style="font-size:2rem">
+              <tr>
+                <td>
+                  <nobr><mark>[</mark>alt<mark>]</mark></nobr>
+                </td>
+                <td>Selects all elements with a <em>alt</em> attribute</td>
+              </tr>
+              <tr>
+                <td>
+                  <nobr
+                    ><mark>[</mark>target<mark>=</mark>_blank<mark
+                      >]</mark
+                    ></nobr
+                  >
+                </td>
+                <td>
+                  Selects all elements with target="_blank"
+                </td>
+              </tr>
+            </table>
+          </section>
+          <section>
+            <h4>Attribute selectors (2 / 2)</h4>
+            <p
+              class="codepen"
+              data-height="265"
+              data-theme-id="0"
+              data-default-tab="html,result"
+              data-user="johakr"
+              data-slug-hash="jONpLZG"
+              style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
+              data-pen-title="Attribute selectors"
+            >
+              <span
+                >See the Pen
+                <a href="https://codepen.io/johakr/pen/jONpLZG/">
+                  Attribute selectors</a
+                >
+                by Johannes (<a href="https://codepen.io/johakr">@johakr</a>) on
+                <a href="https://codepen.io">CodePen</a>.</span
+              >
+            </p>
+            <script
+              async
+              src="https://static.codepen.io/assets/embed/ei.js"
+            ></script>
+          </section>
+          <section>
+            <h4>CSS Specificity (1 / 9)</h4>
+            <p>
+              If there are <strong>multiple conflicting CSS rules</strong> that
+              point to the same element, the browser follows some rules to
+              determine which one is <strong>most specific</strong>.
+            </p>
+            <p>
+              If there are 2 rules with the same specifity, the last one wins.
+            </p>
+            <p>
+              That’s why it’s called <strong>cascading</strong> style sheets.
+            </p>
+            <p>The universal selector has no specificity</p>
+          </section>
+          <section>
+            <h4>CSS Specificity (2 / 9)</h4>
+            <img
+              src="https://css-tricks.com/wp-content/csstricks-uploads/specificity-calculationbase.png"
+            />
+            <small
+              ><a href="https://css-tricks.com/specifics-on-css-specificity/"
+                >https://css-tricks.com/specifics-on-css-specificity/</a
+              ></small
+            >
+          </section>
+          <section>
+            <h4>CSS Specificity (3 / 9)</h4>
+            <img
+              src="https://css-tricks.com/wp-content/csstricks-uploads/cssspecificity-calc-1.png"
+            />
+            <small
+              ><a href="https://css-tricks.com/specifics-on-css-specificity/"
+                >https://css-tricks.com/specifics-on-css-specificity/</a
+              ></small
+            >
+          </section>
+          <section>
+            <h4>CSS Specificity (4 / 9)</h4>
+            <img
+              src="https://css-tricks.com/wp-content/csstricks-uploads/cssspecificity-calc-2.png"
+            />
+            <small
+              ><a href="https://css-tricks.com/specifics-on-css-specificity/"
+                >https://css-tricks.com/specifics-on-css-specificity/</a
+              ></small
+            >
+          </section>
+          <section>
+            <h4>CSS Specificity (5 / 9)</h4>
+            <img
+              src="https://css-tricks.com/wp-content/uploads/2010/05/cssspecificity-calc-3v2.jpg"
+            />
+            <small
+              ><a href="https://css-tricks.com/specifics-on-css-specificity/"
+                >https://css-tricks.com/specifics-on-css-specificity/</a
+              ></small
+            >
+          </section>
+          <section>
+            <h4>CSS Specificity (6 / 9)</h4>
+            <img
+              src="https://css-tricks.com/wp-content/csstricks-uploads/cssspecificity-calc-4.png"
+            />
+            <small
+              ><a href="https://css-tricks.com/specifics-on-css-specificity/"
+                >https://css-tricks.com/specifics-on-css-specificity/</a
+              ></small
+            >
+          </section>
+          <section>
+            <h4>CSS Specificity (7 / 9)</h4>
+            <img
+              src="https://css-tricks.com/wp-content/csstricks-uploads/cssspecificity-calc-5.png"
+            />
+            <br />
+            <small
+              ><mark>::</mark>first-letter with two colons would be CSS3
+              compliant</small
+            >
+            <br />
+            <small
+              ><a href="https://css-tricks.com/specifics-on-css-specificity/"
+                >https://css-tricks.com/specifics-on-css-specificity/</a
+              ></small
+            >
+          </section>
+          <section>
+            <h4>CSS Specificity (9 / 9)</h4>
+            <pre>
+								* { }
+								li { }
+								li::first-line
+								ul li { }
+								ul ol+li { }
+								h1 + *[rel=up] { }	
+								ul ol li.red { }
+								li.red.level {}
+								style=“”
+								p { }
+								div p { }
+								div, p { }
+								.sith { }
+								div p.sith { }
+								#sith { }
+								body #darkside .sith p { }
+								</pre
+            >
+          </section>
+          <section>
+            <h4>CSS Specificity (9 / 9) Solution</h4>
+            <pre>
+                  * { } (0, 0, 0, 0)
+                  li { } (0, 0, 0, 1)
+                  li::first-line (0, 0, 0, 2)
+                  ul li { } (0, 0, 0, 2)
+                  ul ol+li { } (0, 0, 0, 3)
+                  h1 + *[rel=up] { } (0, 0, 1, 1)
+                  ul ol li.red { } (0, 0, 1, 3)
+                  li.red.level {} (0, 0, 2, 1)
+                  style=“” (1, 0, 0, 0)
+                  p { } (0, 0, 0, 1)
+                  div p { } (0, 0, 0, 2)
+                  div, p { } (0, 0, 0, 1)
+                  .sith { } (0, 0, 1, 0)
+                  div p.sith { } (0, 0, 1, 2)
+                  #sith { } (0, 1, 0, 0)
+                  body #darkside .sith p { } (0, 1, 1, 2)
+                  </pre
+            >
+          </section>
+          <section>
+            <h4>CSS Specificity (8 / 9)</h4>
+            <a href="https://specificity.keegan.st/" target="_blank"
+              >Specificity Calculator</a
+            >
+          </section>
+          <section>
+            <h4>CSS: Example Exercise</h4>
+            <pre class="css"><code data-trim data-line-numbers>
+              ul#primary-nav li.active:not(:first-child) > a:hover::after {
+                content: '⧉'
+              }
+            </code></pre>
+            <ol>
+              <li>Describe in natural language what the css rule does.</li>
+              <li>
+                Provide a HTML structure with at least one element matched by
+                the CSS selector.
+              </li>
+              <li>
+                What's the CSS specificity of the given CSS selector in format
+                (s,i,c,e)?
+              </li>
+              <li>
+                You want to override the given CSS rule for a specific element
+                which is selected by that rule. What options do you have?
+              </li>
+            </ol>
+          </section>
+          <section>
+            <h4>How to include CSS</h4>
+            <p>External CSS</p>
+            <pre class="html"><code data-trim data-line-numbers>
+							&lt;head>
+								&lt;link rel="stylesheet" type="text/css" href="mystyle.css">
+							&lt;/head>
+						</code></pre>
+            <p>Internal CSS</p>
+            <pre class="html"><code data-trim data-line-numbers>
+								&lt;head>
+										&lt;style>
+											body { background-color: linen; }
+											&lt;/style>
+								&lt;/head>
+							</code></pre>
+            <p>Inline CSS</p>
+            <pre class="html"><code data-trim data-line-numbers>
+							&lt;body style="background-color: linen;">&lt;/body>
+						</code></pre>
+          </section>
+          <section>
+            <h4>CSS Properties (1 / 2)</h4>
+            <ul style="font-size:2rem;">
+              <li>background, background-color, background-image</li>
+              <li>
+                border, border-color, border-style, border-width, border-radius
+              </li>
+              <li>color</li>
+              <li>cursor</li>
+              <li>display</li>
+              <li>font, font-family, font-size, font-width</li>
+              <li>height, width</li>
+              <li>letter-spacing, line-height</li>
+              <li>margin</li>
+              <li>overflow</li>
+              <li>padding</li>
+              <li>text-align, text-decoration</li>
+            </ul>
+            <small style="margin-top:2rem"
+              ><a
+                href="https://www.w3schools.com/cssref/default.asp"
+                target="_blank"
+                >CSS Reference</a
+              ></small
+            >
+          </section>
+          <section>
+            <h4>CSS Properties (2 / 2)</h4>
+            <p
+              class="codepen"
+              data-height="500"
+              data-theme-id="0"
+              data-default-tab="css,result"
+              data-user="johakr"
+              data-slug-hash="yLBqzyR"
+              style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
+              data-pen-title="CSS Properties"
+            >
+              <span
+                >See the Pen
+                <a href="https://codepen.io/johakr/pen/yLBqzyR/">
+                  CSS Properties</a
+                >
+                by Johannes (<a href="https://codepen.io/johakr">@johakr</a>) on
+                <a href="https://codepen.io">CodePen</a>.</span
+              >
+            </p>
+            <script
+              async
+              src="https://static.codepen.io/assets/embed/ei.js"
+            ></script>
+          </section>
+          <section>
+            <h2>CSS Gotchas</h2>
+            <div
+              style="align-items: center;
+						justify-content: space-around;
+						display: flex;"
+            >
+              <ul>
+                <li>
+                  <a
+                    href="https://css-tricks.com/regarding-css-global-scope/"
+                    target="_blank"
+                    >CSS Global Scope (Specificity)</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://www.w3schools.com/cssref/css3_browsersupport.asp"
+                    target="_blank"
+                    >Browser Support</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://blog.nextzy.me/how-to-write-css-for-a-great-performance-web-application-edf75bb8a8cc"
+                    target="_blank"
+                    >CSS Selector Efficiency</a
+                  >
+                </li>
+              </ul>
+              <img
+                src="https://miro.medium.com/max/403/1*fmTCcA38isoUjztdsBh3fA.png"
+              />
+            </div>
+            <img
+              class="stretch"
+              src="https://www.reactiongifs.us/wp-content/uploads/2017/12/giphy-1.gif"
+            />
+          </section>
+          <section>
+            <h4>QUIZ: Well aimed? How well do you know CSS selectors?</h4>
+            <a href="https://codepen.io/pehaa/full/ROapJZ"
+              ><img
+                src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/74321/darts.svg"
+                style="height:400px;"
+            /></a>
+          </section>
+        </section>
+        <section data-background-color="#ff5252">
+          <h2>
+            Let’s make things pretty by building a
+            <a href="http://bettermotherfuckingwebsite.com/" target="_blank"
+              >better mo’fuckin’ website</a
+            >
+            about you
+          </h2>
+        </section>
+        <section>
+          <section>
+            <h2>JavaScript</h2>
+            <a href="http://eloquentjavascript.net/" target="_blank">
+              <img
+                src="http://eloquentjavascript.net/img/cover.jpg"
+                height="500"
+              />
+            </a>
+          </section>
+          <section>
+            <h4>JavaScript Characteristics</h4>
+            <ul>
+              <li>
+                <strong>high-level</strong>, <strong>interpreted</strong>
+                <strong>scripting</strong> language
+              </li>
+              <li><strong>curly-bracket</strong> syntax (like C, Java...)</li>
+              <li><strong>dynamic typing</strong></li>
+              <li>prototype-based <strong>object orientation</strong></li>
+              <li><strong>first-class functions</strong></li>
+              <li>
+                <strong>multi-paradigm</strong>: event-driven, functional,
+                object-oriented
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h4>History of JavaScript (Let there be JavaScript 1 / 2)</h4>
+            <ul>
+              <li>
+                <strong>Early 1995</strong> web designers needed a
+                <em>"glue"</em> language to make their sites more dynamic
+              </li>
+              <li>
+                <strong>May 1995</strong> Brendan Eich creates
+                <em>Mocha</em> for Netscape in 10 days
+              </li>
+              <li>
+                <strong>Sep 1995</strong> renamed to <em>LiveScript</em> for
+                marketing reasons
+              </li>
+              <li>
+                <strong>Dec 1995</strong> renamed to <em>JavaScript</em> for
+                marketing reasons
+              </li>
+            </ul>
+            <small style="margin-top: 1em;"
+              ><a
+                href="https://dev.to/codediodeio/the-weird-history-of-javascript-2bnb"
+                >https://dev.to/codediodeio/the-weird-history-of-javascript-2bnb</a
+              ></small
+            >
+          </section>
+          <section>
+            <h4>History of JavaScript (Let there be JavaScript 2 / 2)</h4>
+            <ul>
+              <li>
+                <strong>Aug 1996</strong> Microsoft reverse engineers JavaScript
+                and ships it with IE 3, but calls it <em>JScript</em>
+              </li>
+              <li>
+                <strong>1997</strong> The first standardized version of
+                JavaScript (ES1) is approved by the TC-39 committee as
+                ECMAScript
+              </li>
+              <li>
+                <strong>1999</strong> ES3 is standardized. It will stand for the
+                next 10 years.
+              </li>
+            </ul>
+            <small style="margin-top: 1em;"
+              ><a
+                href="https://dev.to/codediodeio/the-weird-history-of-javascript-2bnb"
+                >https://dev.to/codediodeio/the-weird-history-of-javascript-2bnb</a
+              ></small
+            >
+          </section>
+          <section>
+            <img
+              src="https://i.giphy.com/media/ALsmDt9JdRLJm/giphy.gif"
+              class="stretch"
+            />
+          </section>
+          <section>
+            <h4>History of JavaScript (The Dark Ages)</h4>
+            <ul>
+              <li><strong>2000</strong> The tech bubble bursts</li>
+              <li><strong>2005</strong> Ajax gets popular</li>
+              <li>
+                <strong>2006</strong> JQuery gets created and offers
+                cross-browser compatibility
+              </li>
+              <li><strong>2008</strong> ES4 fails and gets abandoned</li>
+            </ul>
+            <small style="margin-top: 1em;"
+              ><a
+                href="https://dev.to/codediodeio/the-weird-history-of-javascript-2bnb"
+                >https://dev.to/codediodeio/the-weird-history-of-javascript-2bnb</a
+              ></small
+            >
+          </section>
+          <section>
+            <h4>History of JavaScript (The Renaissance)</h4>
+            <ul>
+              <li>
+                <strong>2008</strong> Google releases the Chrome Browser and
+                open-sources its high-performance runtime, called the V8 engine
+              </li>
+              <li>
+                <strong>2009</strong> NodeJS is created. It gives rise to the
+                <strong>JavaScript Everywhere</strong> paradigm.
+              </li>
+              <li><strong>2009</strong> ES5 is standardized. (JSON support)</li>
+              <li>
+                <strong>2010</strong> First Frameworks: Angular and Backbone
+              </li>
+              <li><strong>2013</strong> Facebook creates ReactJS</li>
+            </ul>
+            <small style="margin-top: 1em;"
+              ><a
+                href="https://dev.to/codediodeio/the-weird-history-of-javascript-2bnb"
+                >https://dev.to/codediodeio/the-weird-history-of-javascript-2bnb</a
+              ></small
+            >
+          </section>
+          <section>
+            <h4>History of JavaScript (Modern Times)</h4>
+            <ul>
+              <li>
+                <strong>2015</strong> ES6 brings ton of new features.
+                Transpilers like babel and typescript arise
+              </li>
+              <li>
+                <strong>2016</strong> ES7 arrives. (ECMA transforms to annual
+                releases)
+              </li>
+              <li><strong>2017</strong> ES8 arrives. Async Await Syntax</li>
+              <li><strong>2017</strong> Web Assembly (WASM) gets introduced</li>
+              <li><strong>2017</strong> Browser Cryptomining (Coinhive)</li>
+              <li><strong>2018</strong> ES9 arrives. Rest/Spread Syntax</li>
+            </ul>
+            <small style="margin-top: 1em;"
+              ><a
+                href="https://dev.to/codediodeio/the-weird-history-of-javascript-2bnb"
+                >https://dev.to/codediodeio/the-weird-history-of-javascript-2bnb</a
+              ></small
+            >
+          </section>
+          <section>
+            <h4>Values, Types, and Operators</h4>
+            <p
+              class="codepen"
+              data-height="500"
+              data-theme-id="0"
+              data-default-tab="js,result"
+              data-user="johakr"
+              data-slug-hash="oNvmgRE"
+              style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
+              data-pen-title="Values, Types, and Operators"
+            >
+              <span
+                >See the Pen
+                <a href="https://codepen.io/johakr/pen/oNvmgRE">
+                  Values, Types, and Operators</a
+                >
+                by Johannes (<a href="https://codepen.io/johakr">@johakr</a>) on
+                <a href="https://codepen.io">CodePen</a>.</span
+              >
+            </p>
+            <script
+              async
+              src="https://static.codepen.io/assets/embed/ei.js"
+            ></script>
+          </section>
+          <section>
+            <h4>Program Structure</h4>
+            <p
+              class="codepen"
+              data-height="500"
+              data-theme-id="0"
+              data-default-tab="js,result"
+              data-user="johakr"
+              data-slug-hash="JjPxYjz"
+              style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
+              data-pen-title="Program Structure"
+            >
+              <span
+                >See the Pen
+                <a href="https://codepen.io/johakr/pen/JjPxYjz">
+                  Program Structure</a
+                >
+                by Johannes (<a href="https://codepen.io/johakr">@johakr</a>) on
+                <a href="https://codepen.io">CodePen</a>.</span
+              >
+            </p>
+            <script
+              async
+              src="https://static.codepen.io/assets/embed/ei.js"
+            ></script>
+          </section>
+          <section>
+            <h4>Functions</h4>
+            <p
+              class="codepen"
+              data-height="500"
+              data-theme-id="0"
+              data-default-tab="js,result"
+              data-user="johakr"
+              data-slug-hash="JjPxYNQ"
+              style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
+              data-pen-title="Functions"
+            >
+              <span
+                >See the Pen
+                <a href="https://codepen.io/johakr/pen/JjPxYNQ"> Functions</a>
+                by Johannes (<a href="https://codepen.io/johakr">@johakr</a>) on
+                <a href="https://codepen.io">CodePen</a>.</span
+              >
+            </p>
+            <script
+              async
+              src="https://static.codepen.io/assets/embed/ei.js"
+            ></script>
+          </section>
+          <section>
+            <h4>Data Structures: Objects and Arrays</h4>
+            <p
+              class="codepen"
+              data-height="500"
+              data-theme-id="0"
+              data-default-tab="js,result"
+              data-user="johakr"
+              data-slug-hash="ZEzwbxV"
+              style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
+              data-pen-title="Data Structures"
+            >
+              <span
+                >See the Pen
+                <a href="https://codepen.io/johakr/pen/ZEzwbxV">
+                  Data Structures</a
+                >
+                by Johannes (<a href="https://codepen.io/johakr">@johakr</a>) on
+                <a href="https://codepen.io">CodePen</a>.</span
+              >
+            </p>
+            <script
+              async
+              src="https://static.codepen.io/assets/embed/ei.js"
+            ></script>
+          </section>
+          <section>
+            <h4>Exercise: Fizz Buzz</h4>
+            <p>
+              Write a program that uses console.log to print all the numbers
+              from 1 to 100, with two exceptions. For numbers divisible by 3,
+              print "Fizz" instead of the number, and for numbers divisible by 5
+              (and not 3), print "Buzz" instead.
+            </p>
+            <p>
+              When you have that working, modify your program to print
+              "FizzBuzz" for numbers that are divisible by both 3 and 5 (and
+              still print "Fizz" or "Buzz" for numbers divisible by only one of
+              those).
+            </p>
+            <p>
+              <small
+                >(This is actually an interview question that has been claimed
+                to weed out a significant percentage of programmer candidates.
+                So if you solved it, your labor market value just went
+                up.)</small
+              >
+            </p>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Document Object Model</h2>
+            <ul>
+              <li>
+                When a web page is loaded, the browser creates a
+                <strong>DOM</strong> of the page.
+              </li>
+              <li>
+                The HTML DOM model is constructed as a <strong>tree</strong> of
+                Objects.
+              </li>
+            </ul>
+            <img
+              src="https://www.w3schools.com/js/pic_htmltree.gif"
+              class="stretch"
+            />
+          </section>
+          <section>
+            <h4>Document Object Model</h4>
+            <p>
+              standard object model and
+              <strong>programming interface for HTML</strong>
+            </p>
+            <ul>
+              <li>The HTML <strong>elements</strong> as objects</li>
+              <li>The <strong>properties</strong> of all HTML elements</li>
+              <li>The <strong>methods</strong> to access all HTML elements</li>
+              <li>The <strong>events</strong> for all HTML elements</li>
+            </ul>
+            <br /><br />
+            <small
+              >In other words: The HTML DOM is a standard for how to get,
+              change, add, or delete HTML elements.</small
+            >
+          </section>
+          <section>
+            <h4>Find HTML elements</h4>
+            <p>using the power of CSS selectors</p>
+            <pre class="javascript"><code data-trim data-line-numbers>						
+						// Find one (first) element matching css selector
+						const element = document.querySelector('#id');
+
+						// Find all elements matching css selector
+						const elements = document.querySelectorAll('.className');
+					</code></pre>
+          </section>
+          <section>
+            <h4>Change HTML elements</h4>
+            <p>Mutate content, attributes & styles</p>
+            <pre class="javascript"><code data-trim data-line-numbers>						
+							// Change the HTML content
+							document.querySelector('p').innerHTML = '<strong>new text</strong>';
+
+						// Change any HTML attribute
+							document.querySelector('img').src = '/kitty.png';
+							document.querySelector('a').href = 'https://johakr.me';
+							document.querySelector('input').value = 'Jane';
+
+							// Change CSS styling 
+							document.querySelector('p').style.color = 'red';
+							document.querySelector('p').style.display = 'none';
+						</code></pre>
+          </section>
+
+          <section>
+            <h4>DOM Events</h4>
+            <p>DOM Events are <em>things</em> that</p>
+            <ul>
+              <li>happen to HTML elements,</li>
+              <li>are triggered by either the browser or the user and</li>
+              <li>can be reacted to by JavaScript.</li>
+            </ul>
+          </section>
+          <section>
+            <h4>Examples</h4>
+            <ul>
+              <li>An HTML web page has finished loading</li>
+              <li>An HTML input field was changed</li>
+              <li>An HTML button was clicked</li>
+            </ul>
+          </section>
+          <section>
+            <h4>Adding Event Listeners</h4>
+            <pre class="javascript"><code data-trim data-line-numbers>						
+								const button = document.querySelector('button');	
+
+								button.addEventListener('click', (evt) => {
+									// evt.target = element which received the click event
+									alert('YOU CLICKED THIS BUTTON', evt.target);
+								});
+
+								const form = document.querySelector('form');	
+
+								form.addEventListener('submit', (evt) => {
+									// prevent default submit action
+									evt.preventDefault();
+
+									// get all form values as JSON
+									const values = Object.fromEntries(new FormData(e.target));
+									console.log(values);
+								});
+							</code></pre>
+          </section>
+          <section>
+            <h4>Common Event Types</h4>
+            <table>
+              <tr>
+                <th>Ressource Events</th>
+                <td>error, abort, load, unload</td>
+              </tr>
+              <tr>
+                <th>Focus Events</th>
+                <td>focus, blur</td>
+              </tr>
+              <tr>
+                <th>Form Events</th>
+                <td>submit, reset, change, input</td>
+              </tr>
+              <tr>
+                <th>View events</th>
+                <td>resize, scroll</td>
+              </tr>
+              <tr>
+                <th>Keyboard events</th>
+                <td>keydown, keypress, keyup</td>
+              </tr>
+              <tr>
+                <th>Mouse events</th>
+                <td>click, mouseover, mouseout</td>
+              </tr>
+            </table>
+
+            <p>
+              <small
+                ><a href="https://developer.mozilla.org/en-US/docs/Web/Events"
+                  >Event reference</a
+                ></small
+              >
+            </p>
+          </section>
+          <section>
+            <h4>Exercise</h4>
+            <p>
+              Create a button, which displays the amount of received clicks.
+            </p>
+          </section>
+          <section>
+            <h4>Exercise: Solution</h4>
+
+            <p
+              class="codepen"
+              data-height="265"
+              data-theme-id="dark"
+              data-default-tab="js,result"
+              data-user="johakr"
+              data-slug-hash="dybdzEd"
+              style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
+              data-pen-title="dybdzEd"
+            >
+              <span
+                >See the Pen
+                <a href="https://codepen.io/johakr/pen/dybdzEd/"> dybdzEd</a> by
+                Johannes (<a href="https://codepen.io/johakr">@johakr</a>) on
+                <a href="https://codepen.io">CodePen</a>.</span
+              >
+            </p>
+            <script
+              async
+              src="https://static.codepen.io/assets/embed/ei.js"
+            ></script>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>JavaScript Object Notation (JSON)</h2>
+            <ul>
+              <li>a lightweight data-interchange format,</li>
+              <li>easy for humans to read and write,</li>
+              <li>easy for machines to parse and generate and</li>
+              <li>completely language independent.</li>
+            </ul>
+          </section>
+          <section>
+            <h4>JSON is built on three structures:</h4>
+            <ul>
+              <li>
+                collection of name / value pairs
+                <small
+                  >(object, record, struct, dictionary, hash table, keyed list,
+                  associative array...)</small
+                >
+              </li>
+              <li>
+                ordered list of values
+                <small>(array, vector, list, sequence...)</small>
+              </li>
+              <li>primitives: string, number, boolean, null</li>
+            </ul>
+          </section>
+          <section>
+            <h4>JSON Example</h4>
+            <pre><code data-trim data-line-numbers>
+                { 
+                  "name": "John",
+                  "age": 30,
+                  "car": null,
+                  "driverLicense": false,
+                  "address": {
+                    "city": "Stuttgart",
+                    "street": "Theodor-Heuss-Straße"
+                  },
+                  "hobbies": ["reading", "cooking"]
+                }
+					</code></pre>
+            <small
+              ><a
+                href="https://jsoneditoronline.org/?id=3e0486e4b8084baca52572bff563aefa"
+                target="_blank"
+                >https://jsoneditoronline.org/?id=3e0486e4b8084baca52572bff563aefa</a
+              ></small
+            >
+          </section>
+          <section>
+            <h4>JSON Schema</h4>
+            <p>
+              JSON Schema is a vocabulary that allows you to
+              <strong>annotate and validate JSON</strong> documents.
+            </p>
+            <small
+              ><a
+                href="https://json-schema.org/learn/miscellaneous-examples.html"
+                >https://json-schema.org/learn/miscellaneous-examples.html</a
+              ></small
+            >
+          </section>
+          <section>
+            <h4>JSON Schema Example</h4>
+            <pre><code data-trim data-line-numbers>
+                  {
+                    "$schema": "http://json-schema.org/draft-07/schema#",
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "type": "string",
+                        "minLength": 2,
+                        "maxLength": 32
+                      },
+                      "age": {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 150
+                      },
+                      "car": {
+                        "type": [
+                          "string",
+                          "null"
+                        ],
+                        "enum": [
+                          "mercedes",
+                          "audi",
+                          null
+                        ]
+                      },
+                      "driverLicense": {
+                        "type": "boolean"
+                      },
+                      "hobbies": {
+                        "type": "array"
+                      }
+                    },
+                    "required": [
+                      "name",
+                      "age",
+                      "car",
+                      "driverLicense",
+                      "hobbies"
+                    ]
+                  }
+            </code></pre>
+            <small
+              ><a href="https://www.jsonschemavalidator.net/"
+                >https://www.jsonschemavalidator.net/</a
+              ></small
+            >
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Promises</h2>
+            <p>
+              A Promise is a proxy for a
+              <strong
+                >value not necessarily known when the promise is created</strong
+              >. It allows you to associate handlers with an asynchronous
+              action’s eventual success value or failure reason. This lets
+              asynchronous methods return values like synchronous methods:
+              instead of immediately returning the final value,
+              <strong
+                >the asynchronous method returns a promise to supply the value
+                at some point in the future</strong
+              >.
+            </p>
+            <small
+              ><a
+                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise"
+                >https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise</a
+              ></small
+            >
+          </section>
+          <section
+            data-background="https://previews.123rf.com/images/nikilitov/nikilitov1503/nikilitov150300138/37640626-three-tequila-shots-with-lemon-and-salt-on-wooden-background-.jpg"
+          >
+            <div style="background-color: rgba(0, 0, 0, 0.8); padding: 24px">
+              <h2>Real Life Example</h2>
+              <p style="text-align: left; max-width: 70%;">
+                Hey Mr. Promise! Can you run to the store down the street and
+                get me a bottle of tequilla?
+              </p>
+              <p style="text-align: right; max-width: 70%; margin-left: auto;">
+                Sure thing!
+              </p>
+              <p style="text-align: left; max-width: 70%;">
+                While you are doing that, I will cut the lemons.
+              </p>
+              <p style="text-align: right; max-width: 70%; margin-left: auto;">
+                Sounds good! See you in a bit.
+              </p>
+            </div>
+          </section>
+          <section>
+            <p>
+              There are <strong>2 promises</strong> (asynchronous actions with
+              indefinite outcome)
+            </p>
+            <ul>
+              <li>getting a bottle of tequilla</li>
+              <li>cutting the lemons</li>
+            </ul>
+            <p>with <strong>3 possible states</strong> respectively</p>
+            <ul>
+              <li>pending: awaiting promise response</li>
+              <li>resolved: promise has successfully returned</li>
+              <li>rejected: failure occurred</li>
+            </ul>
+          </section>
+          <section>
+            <pre><code data-trim data-line-numbers>
+            const cutLemons = () => new Promise((resolve, reject) => {
+              const success = cutting(); // doing sth async
+
+              if (success) {
+                resolve("🍋🍋🍋")
+              } else {
+                reject("🤕🤕🤕");
+              }
+            });
+      </code></pre>
+            <pre><code data-trim data-line-numbers>
+        cutLemons() // pending
+          .then(result => console.log(lemons)) // resolved 🍋🍋🍋
+          .catch(error => console.log(error)) // rejected 🤕🤕🤕
+      </code></pre>
+          </section>
+          <section>
+            <p>
+              In short, a Promise is an <strong>object</strong> that once called
+              upon, will evetually <strong>resolve</strong> or
+              <strong>reject</strong> and
+              <strong
+                >return a response based on some criteria that is specified
+                within the Promise object</strong
+              >.
+            </p>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Fetch API</h2>
+            <p>
+              The Fetch API provides an interface for
+              <strong>fetching resources</strong> across the network...
+            </p>
+            <small>...based on Promises.</small>
+          </section>
+          <section>
+            <h4>Fetch: GET JSON Data</h4>
+            <pre><code data-trim data-line-numbers>
+              fetch("https://swapi.co/api/people/") // request object
+                .then(response => respose.json()) // response object
+                .then(json => console.log(json));
+            </code></pre>
+          </section>
+          <section>
+            <h4>Fetch: POST JSON Data</h4>
+            <pre><code data-trim data-line-numbers>
+                fetch("/login", { 
+                  method: "POST",
+                  body: JSON.stringify({ username: 'john', password: 'secure' }),
+                  headers: {
+                    "Content-Type": "application/json"
+                  },
+                 }) // request object
+                  .then(response => respose.json()) // response object
+                  .then(json => console.log(json));
+              </code></pre>
+          </section>
+          <section>
+            <h4>Fetch: Response Object</h4>
+            <ul>
+              <li><strong>headers</strong> http response headers</li>
+              <li>
+                <strong>ok</strong> boolean stating whether the response was
+                successful (status in the range 200-299) or not.
+              </li>
+              <li>
+                <strong>status</strong> status code of the response (e.g., 200
+                for a success)
+              </li>
+              <li>
+                <strong>json()</strong> returns a promise that resolves with the
+                result of parsing the body text as JSON
+              </li>
+              <li>
+                <strong>text()</strong> returns a promise that resolves with a
+                string
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h4>Fetch: Request Object</h4>
+            <ul>
+              <li><strong>headers</strong> http request headers</li>
+              <li>
+                <strong>method</strong> http request method (GET, POST...)
+              </li>
+              <li>
+                <strong>body</strong> content for an api request which needs a
+                body payload
+              </li>
+              <li>
+                <strong>credentials </strong> credentials of the request (e.g.,
+                "omit", "same-origin", "include"). The default is "same-origin"
+              </li>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Server Side Web Technology</h2>
+            <p>
+              A dynamic site can return different data for a URL based on
+              information provided by the user or stored preferences and can
+              perform other operations as part of returning a response
+            </p>
+          </section>
+          <section>
+            <h4>What can you do on the server-side?</h4>
+            <ul>
+              <li>Efficient storage and delivery of information</li>
+              <li>Customised user experience</li>
+              <li>Controlled access to content</li>
+              <li>Store session / state information</li>
+              <li>Notifications and communication</li>
+              <li>Data analysis</li>
+            </ul>
+            <small style="margin-top: 2rem"
+              ><a
+                href="https://developer.mozilla.org/en-US/docs/Learn/Server-side/First_steps/Introduction"
+                >https://developer.mozilla.org/en-US/docs/Learn/Server-side/First_steps/Introduction</a
+              ></small
+            >
+          </section>
+          <section>
+            <h4>Web Architecture Overview</h4>
+            <p>
+              Your HTML gets dynamic, but
+              <strong>who is in charge of creating the HTML markup?</strong>
+            </p>
+            <ul>
+              <li>Server: Server-side HTML</li>
+              <li>Both: JS Generation Widgets (Fetch)</li>
+              <li>Client: Single Page Applications (SPA)</li>
+            </ul>
+          </section>
+          <section>
+            <h4>Architecture I: Server-side HTML</h4>
+            <p>HTML is completely composed on the server side</p>
+            <img
+              src="https://mdn.mozillademos.org/files/13839/Web%20Application%20with%20HTML%20and%20Steps.png"
+            />
+          </section>
+          <section>
+            <h4>Architecture II: JS Generation Widgets</h4>
+            <p>
+              HTML Skeleton is composed on the server side & some data is
+              exposed by a JSON API.<br />
+              Parts of the DOM are created client-side by JavaScript
+            </p>
+            <img src="images/architecture-widgets.jpg" />
+          </section>
+          <section>
+            <h4>Architecture III: Single Page Applications</h4>
+            <p>
+              Server only provides data by JSON APIs.<br />
+              DOM is completely composed on the client-side by JavaScript
+            </p>
+            <img src="images/architecture-spa.jpg" />
+          </section>
+          <section>
+            <h2>Web Frameworks</h2>
+            <p>will help you with</p>
+            <ul>
+              <li>Work directly with HTTP requests and responses</li>
+              <li>Route requests to the appropriate handler</li>
+              <li>Make it easy to access data in the request</li>
+              <li>Abstract and simplify database access</li>
+              <li>Rendering data (working with JSON)</li>
+            </ul>
+          </section>
+          <section>
+            <h4>Web Frameworks</h4>
+            <ul>
+              <li>Python: Django, Flask</li>
+              <li>NodeJS: Express, Fastify</li>
+              <li>Ruby: Ruby on Rails</li>
+              <li>PHP: Laravel</li>
+              <li>Java: Spring Boot</li>
+              <li>Go: Gin</li>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Server Side JavaScript: NodeJS</h2>
+            <p>
+              Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript
+              engine.
+            </p>
+            <img
+              class="stretch"
+              src="https://nodejs.org/static/images/logos/nodejs-new-pantone-white.png"
+            />
+          </section>
+          <section>
+            <h4>Node Package Manager (npm)</h4>
+            <ul>
+              <li>world's largest software registry</li>
+              <li>over 800,000 code packages</li>
+              <li>open-source developers use npm to share software</li>
+              <li>npm comes prebundled with node</li>
+            </ul>
+            <small style="margin-top:2rem;"
+              >A package is a reusable piece of software which can be downloaded
+              from a global registry into a developer’s local
+              environment.</small
+            >
+            <small style="margin-top:2rem;"
+              >A package manager is a piece of software that lets you manage the
+              dependencies (external code written by you or someone else) that
+              your project needs to work correctly.</small
+            >
+          </section>
+          <section>
+            <h4>npm manifest file: package.json</h4>
+            <p>
+              Packages published to the registry must contain a package.json
+              file.
+            </p>
+            <ul>
+              <li>lists the packages your project depends on</li>
+              <li>
+                specifies versions of a package that your project can use using
+                semantic versioning rules
+              </li>
+              <li>
+                makes your build reproducible, and therefore easier to share
+                with other developers
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h4>npm manifest file: package.json</h4>
+            <pre><code data-trim data-line-numbers>
+              {
+                "name": "04-express",
+                "version": "1.0.0",
+                "description": "",
+                "main": "index.js",
+                "scripts": {
+                  "start": "node index.js",
+                  "test": "echo \"Error: no test specified\" && exit 1"
+                },
+                "author": "",
+                "license": "ISC",
+                "dependencies": {
+                  "express": "^4.17.1"
+                }
+              }
+            </code></pre>
+          </section>
+          <section>
+            <h4>NodeJS Quickstart</h4>
+            <pre><code data-trim data-line-numbers>
+              npm init # creates project manifest (package.json)
+              npm install express # installs the express web framework as a dependency
+            </code></pre>
+            <pre><code data-trim data-line-numbers>
+              // index.js
+              const express = require('express');
+              const app = express();
+                
+              app.get('/', (req, res) => {
+                res.json({ hello: 'world' });
+              });
+                
+              app.listen(3000);  
+            </code></pre>
+            <pre><code data-trim data-line-numbers>
+              node index.js # runs the server 
+            </code></pre>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Building an API</h2>
+            <p>
+              An application programming interface (API) is an interface or
+              communication protocol between a client and a server.
+            </p>
+          </section>
+          <section>
+            <h4>RESTful Web APIs</h4>
+            <p>
+              REpresentational State Transfer is an architectural style for
+              distributed hypermedia systems (web apps).
+            </p>
+            <ul>
+              <li>
+                <strong>Uniform interface</strong>: consistent naming
+                conventions and data format for resources
+              </li>
+              <li>
+                <strong>Client–server</strong>: separating the user interface
+                concerns from the data storage concerns
+              </li>
+              <li>Stateless</li>
+              <li>Cacheable</li>
+              <li>Layered system</li>
+            </ul>
+          </section>
+          <section>
+            <h4>Resource Design</h4>
+            <p>Use plural nouns, HTTP methods, status codes, JSON.</p>
+            <p>No trailing slashes, no file extensions.</p>
+            <ul>
+              <li>GET /todos (collection)</li>
+              <li>GET /todos?userId=1 (filtered collection)</li>
+              <li>GET /todos/1 (resource)</li>
+              <li>POST /todos (create resource)</li>
+              <li>PUT /todos/1 (replace resource)</li>
+              <li>PATCH /todos/1 (update resource)</li>
+              <li>DELETE /todos/1 (delete resource)</li>
+            </ul>
+          </section>
+          <section>
+            <h4>REST Sequence Data Flow</h4>
+            <img class="stretch" src="images/rest_sequence.png" />
+            <small
+              >Elliott, Eric. Programming JavaScript applications: Robust web
+              architecture with node, HTML5, and modern JS libraries. " O'Reilly
+              Media, Inc.", 2014.</small
+            >
+          </section>
+          <section>
+            <h4>ExpressJS</h4>
+            <p>Fast, unopinionated, minimalist web framework for Node.js</p>
+            <ul>
+              <li>Routing</li>
+              <li>
+                HTTP Request / Response Handling with first class JSON support
+              </li>
+              <li>Static File Handling</li>
+            </ul>
+            <small style="margin-top: 2rem"
+              ><a href="https://expressjs.com">https://expressjs.com</a></small
+            >
+          </section>
+          <section>
+            <h4>ExpressJS: Routing</h4>
+            <p style="font-size:32px;">
+              Routing refers to determining how an application responds to a
+              client request to a particular endpoint, which is a URI (or path)
+              and a specific HTTP request method (GET, POST...).
+            </p>
+            <pre><code data-trim data-line-numbers>
+              app.METHOD(PATH, HANDLER) 
+            </code></pre>
+            <pre><code data-trim data-line-numbers>
+              // GET /users
+              app.get('/users', (req, res) => {
+                // TODO: DO STUFF
+              });
+            </code></pre>
+            <pre><code data-trim data-line-numbers>
+              // POST /users
+              app.post('/', (req, res) => {
+                // TODO: DO STUFF
+              });
+            </code></pre>
+          </section>
+          <section>
+            <h4>ExpressJS: HTTP Request</h4>
+            <p style="font-size: 32px">
+              The req object represents the HTTP request and has properties for
+              the request query string, parameters, body, HTTP headers, and so
+              on.
+            </p>
+            <pre><code data-trim data-line-numbers>
+              // GET /users/2
+              app.get('/users/:id', (req, res) => {
+                console.log(req.params.id) // access named route params
+              })
+            </code></pre>
+            <pre><code data-trim data-line-numbers>
+              app.use(express.json()) // for parsing application/json
+
+              // POST /users { username: 'john' }
+              app.post('/users', (req, res) => {
+                console.log(req.body.username) // access json request body 
+              });
+            </code></pre>
+            <pre><code data-trim data-line-numbers>
+              // GET /users?age=26
+              app.get('/users', (req, res) => {
+                console.log(req.query.age) // access query string params 
+              });
+            </code></pre>
+          </section>
+          <section>
+            <h4>ExpressJS: HTTP Response</h4>
+            <p style="font-size: 32px">
+              The res object represents the HTTP response that an Express app
+              sends when it gets an HTTP request.
+            </p>
+            <pre><code data-trim data-line-numbers>
+                app.get('/', (req, res) => {
+                  return res.json({ }); // send json, status code 200 implicit
+                });
+              </code></pre>
+            <pre><code data-trim data-line-numbers>
+                app.get('/', (req, res) => {
+                  return res.status(204).send(); // send 204 response with empty body
+                });
+              </code></pre>
+            <pre><code data-trim data-line-numbers>
+                app.get('/', (req, res) => {
+                  return res.status(404).json({ error: 'not found' }); // send 404 with json body
+                });
+              </code></pre>
+          </section>
+          <section>
+            <h4>ExpressJS: Static File Handling</h4>
+            <p style="font-size: 32px">
+              To serve static files such as images, CSS files, and JavaScript
+              files, use the express.static built-in middleware function in
+              Express.
+            </p>
+            <pre><code data-trim data-line-numbers>
+                app.use(express.static('public')) // sends static files from the public directory
+              </code></pre>
+          </section>
+          <section>
+            <h2>API Documentation</h2>
+          </section>
+          <section>
+            <h4>OpenAPI</h4>
+            <p>
+              OpenAPI Specification is an
+              <strong>API description format for REST APIs</strong>. An OpenAPI
+              file (JSON) allows you to describe your entire API, including:
+            </p>
+            <ul>
+              <li>
+                Available endpoints (/users) and operations on each endpoint
+                (GET /users, POST /users)
+              </li>
+              <li>Operation parameters Input and output for each operation</li>
+              <li>Authentication methods</li>
+              <li>Contact information, license, terms of use...</li>
+            </ul>
+            <small
+              ><a
+                href="https://swagger.io/docs/specification/about/"
+                target="_blank"
+                style="margin-top: 3rem"
+                >Open API</a
+              ></small
+            >
+          </section>
+          <section>
+            <h4>OpenAPI Example</h4>
+            <pre><code data-trim data-line-numbers>
+                {
+                  "openapi": "3.0.0",
+                  "info": {
+                    "title": "Sample API",
+                    "description": "Optional multiline or single-line description in [CommonMark](http://commonmark.org/help/) or HTML.",
+                    "version": "0.1.9"
+                  },
+                  "servers": [
+                    {
+                      "url": "http://api.example.com/v1",
+                      "description": "Optional server description, e.g. Main (production) server"
+                    },
+                    {
+                      "url": "http://staging-api.example.com",
+                      "description": "Optional server description, e.g. Internal staging server for testing"
+                    }
+                  ],
+                  "paths": {
+                    "/users": {
+                      "get": {
+                        "summary": "Returns a list of users.",
+                        "description": "Optional extended description in CommonMark or HTML.",
+                        "responses": {
+                          "200": {
+                            "description": "A JSON array of user names",
+                            "content": {
+                              "application/json": {
+                                "schema": {
+                                  "type": "array",
+                                  "items": {
+                                    "type": "string"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+					</code></pre>
+          </section>
+          <section>
+            <h4>Swagger</h4>
+            <a href="https://swagger.io/tools/open-source/">
+              <img src="images/swagger.png" />
+            </a>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Excursion: JavaScript Fatigue</h2>
+            <p>
+              despite all of the language’s progress and growth, many developers
+              have said they are dealing with JavaScript fatigue. JavaScript
+              fatigue refers to the
+              <strong>inability to keep up with the latest tools</strong>, the
+              <strong>fear of becoming obsolete</strong>, the
+              <strong>constant change of the ecosystem</strong>, and the
+              <strong>overwhelming choice</strong>
+            </p>
+            <small
+              ><a
+                href="https://auth0.com/blog/how-to-manage-javascript-fatigue/"
+                >How to Manage JavaScript Fatigue</a
+              ></small
+            >
+          </section>
+          <section>
+            <h4>Tutorial Hell</h4>
+            <a
+              href="https://www.reddit.com/r/webdev/comments/defxvr/web_development_seems_overwhelming/"
+              target="_blank"
+              ><img src="images/reddit_overhelming.png"
+            /></a>
+          </section>
+          <section>
+            <h4>Every Programming Tutorial</h4>
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/MAlSjtxy5ak"
+              frameborder="0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </section>
+          <section>
+            <h4>Increasing Requirements</h4>
+            <small
+              >2019 is simultaneously a
+              <strong>wonderful and also terrifying time</strong> for a newcomer
+              to learn to code. There are so many resources out there! Awesome!
+              But also, there are so many resources out there! Where does anyone
+              even start?</small
+            >
+            <iframe
+              style="margin-top: 2rem"
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/4nQT9h3NSEk?start=384"
+              frameborder="0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </section>
+          <section>
+            <h4>Burnout is a thing</h4>
+            <a
+              href="https://www.reddit.com/r/webdev/comments/85s7f8/do_you_guys_have_days_in_which_you_cant_stand/"
+              ><img src="images/burnout.png"
+            /></a>
+          </section>
+          <section>
+            <h4>Imposter Syndrome</h4>
+            <a
+              href="https://www.reddit.com/r/webdev/comments/bujz38/you_guys_ever_feel_like_you_pretty_have_no_in/"
+              ><img src="images/imposter.png"
+            /></a>
+          </section>
+          <section>
+            <h4>Developer Roadmap</h4>
+            <a href="https://roadmap.sh/frontend"
+              ><img src="images/roadmap.png"
+            /></a>
+          </section>
+        </section>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.9.2/js/reveal.js"></script>
+
+    <script>
+      Reveal.initialize({
+        controls: true,
+        history: true,
+        progress: true,
+        center: true,
+        slideNumber: true,
+        dependencies: [
+          {
+            src:
+              "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.9.2/plugin/zoom-js/zoom.min.js",
+            async: true,
+          },
+          { src: "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.9.2/plugin/highlight/highlight.min.js", async: true },
+        ],
+      });
+    </script>
+  </body>
+</html>
