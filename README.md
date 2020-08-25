@@ -19,6 +19,8 @@ Specific install instructions will differ depending on OS (Windows, Linux, macOS
 - Vesion Control: Create a **[GitHub Account](https://github.com/)**
 - *optional* grab the [GitHub Student Developer Pack](https://education.github.com/pack) for free domains, cloud hosting, dev tools & learning resources.
 
+You should be able to run `node -v` and `git --version` from the same shell!
+
 Please make sure to have these tools up and running. We will have a look on how to use these tools in the lecture, but we won't have time to individually debug the setup on every laptop.
 
 ## Web Development Lecture 2019
