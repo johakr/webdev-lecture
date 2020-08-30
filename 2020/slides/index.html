@@ -11,21 +11,21 @@
 
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.9.2/css/reset.min.css"
+      href="https://cdn.jsdelivr.net/npm/reveal.js@4.0.2/dist/reset.min.css"
     />
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.9.2/css/reveal.min.css"
+      href="https://cdn.jsdelivr.net/npm/reveal.js@4.0.2/dist/reveal.min.css"
     />
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.9.2/css/theme/black.min.css"
+      href="https://cdn.jsdelivr.net/npm/reveal.js@4.0.2/dist/theme/black.min.css"
     />
 
     <!-- Theme used for syntax highlighting of code -->
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.9.2/lib/css/monokai.min.css"
+      href="https://cdn.jsdelivr.net/npm/reveal.js@4.0.2/plugin/highlight/monokai.min.css"
     />
 
     <style>
@@ -34,17 +34,6 @@
         tab-size: 2;
       }
     </style>
-
-    <!-- Printing and PDF exports -->
-    <script>
-      var link = document.createElement("link");
-      link.rel = "stylesheet";
-      link.type = "text/css";
-      link.href = window.location.search.match(/print-pdf/gi)
-        ? "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.9.2/css/print/pdf.min.css"
-        : "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.9.2/css/print/paper.min.css";
-      document.getElementsByTagName("head")[0].appendChild(link);
-    </script>
   </head>
   <body>
     <div class="reveal">
@@ -2960,8 +2949,9 @@
       </div>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.9.2/js/reveal.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.0.2/dist/reveal.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.0.2/plugin/zoom/zoom.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.0.2/plugin/highlight/highlight.min.js"></script>
     <script>
       Reveal.initialize({
         controls: true,
@@ -2969,14 +2959,10 @@
         progress: true,
         center: true,
         slideNumber: true,
-        dependencies: [
-          {
-            src:
-              "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.9.2/plugin/zoom-js/zoom.min.js",
-            async: true,
-          },
-          { src: "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.9.2/plugin/highlight/highlight.min.js", async: true },
-        ],
+        plugins: [
+          RevealZoom,
+          RevealHighlight
+        ]
       });
     </script>
   </body>
