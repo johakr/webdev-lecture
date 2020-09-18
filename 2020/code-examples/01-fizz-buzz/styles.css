@@ -26,6 +26,7 @@ pre > span:not(:last-child)::after {
 #log3 > span:nth-child(5n)::before {
   content: "Buzz";
   font-size: 24px;
+  color: red;
 }
 
 #log3 > span:nth-child(3n) {
@@ -35,4 +36,5 @@ pre > span:not(:last-child)::after {
 #log3 > span:nth-child(3n)::before {
   content: "Fizz";
   font-size: 24px;
+  color: blue;
 }
