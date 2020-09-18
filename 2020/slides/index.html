@@ -2394,7 +2394,7 @@
             <h4>Fetch: GET JSON Data</h4>
             <pre><code data-trim data-line-numbers>
               fetch("https://jsonplaceholder.typicode.com/todos/") // request object
-                .then(response => respose.json()) // response object
+                .then(response => response.json()) // response object
                 .then(json => console.log(json));
             </code></pre>
           </section>
@@ -2408,7 +2408,7 @@
                     "Content-Type": "application/json"
                   },
                  }) // request object
-                  .then(response => respose.json()) // response object
+                  .then(response => response.json()) // response object
                   .then(json => console.log(json));
               </code></pre>
           </section>
