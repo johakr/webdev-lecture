@@ -19,4 +19,10 @@ app.get("/", (req, res) => {
   return res.json({ count: req.session.views });
 });
 
+app.get("/reset", (req, res) => {
+  req.session.destroy();
+
+  res.status(204).send();
+});
+
 app.listen(3000);
