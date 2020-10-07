@@ -21,7 +21,7 @@ createForm.addEventListener("submit", (e) => {
 });
 
 fetchButton.addEventListener("click", () => {
-  fetch("/todos")
+  fetch("/todos?author=johannes")
     .then((res) => {
       // console.log(res.ok, res.status, res);
 

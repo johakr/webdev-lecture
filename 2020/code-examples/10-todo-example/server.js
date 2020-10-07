@@ -39,19 +39,34 @@ app.get("/login/:username", (req, res) => {
 });
 
 app.get("/todos", async (req, res) => {
-  console.log("/todos", req.session.username);
+  console.log(req.query.author);
+
+  if (req.query.author) {
+    const [
+      rows,
+    ] = await connection.execute("SELECT * FROM todos WHERE author = ?", [
+      req.query.author,
+    ]);
+
+    res.json(rows);
+  } else {
+    const [rows] = await connection.execute("SELECT * FROM todos");
+
+    res.json(rows);
+  }
+
+  /*console.log("/todos", req.session.username);
 
   if (!req.session.username) {
     return res.status(401).send();
-  }
+  }*/
 
-  const [
+  /*const [
     rows,
   ] = await connection.execute("SELECT * FROM todos WHERE author = ?", [
     req.session.username,
   ]);
-
-  res.json(rows);
+  */
 });
 
 app.post("/todos", async (req, res) => {
