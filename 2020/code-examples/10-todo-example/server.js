@@ -1,5 +1,8 @@
+require("dotenv").config();
+
 const express = require("express");
 const mysql = require("mysql2/promise");
+const session = require("express-session");
 
 const app = express();
 
@@ -9,7 +12,7 @@ mysql
   .createConnection({
     host: "localhost",
     user: "root",
-    password: "root",
+    password: process.env.DB_PASSWORD,
     database: "todoapp",
   })
   .then((con) => {
@@ -19,8 +22,34 @@ mysql
 app.use(express.static("public"));
 app.use(express.json());
 
+app.use(
+  session({
+    secret: "super secret",
+    resave: false,
+    saveUninitialized: true,
+  })
+);
+
+app.get("/login/:username", (req, res) => {
+  req.session.username = req.params.username;
+
+  console.log("/login/:username", req.session.username);
+
+  res.send();
+});
+
 app.get("/todos", async (req, res) => {
-  const [rows] = await connection.execute("SELECT * FROM todos");
+  console.log("/todos", req.session.username);
+
+  if (!req.session.username) {
+    return res.status(401).send();
+  }
+
+  const [
+    rows,
+  ] = await connection.execute("SELECT * FROM todos WHERE author = ?", [
+    req.session.username,
+  ]);
 
   res.json(rows);
 });
